@@ -18,7 +18,7 @@ redirect_from:
 <span class='anchor' id='about-me'></span>
 
 我将博士毕业于广东深圳的 哈尔滨工业大学 计算机科学与技术学院，我的导师是花忠云副教授。本科毕业于西安的 西北大学 计算机科学与技术学院。包括合著，我已经发表4篇学术论文
- <a href='https://scholar.google.com/citations?user=WMkMTb4AAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=引用"></a>。
+ <a href='https://scholar.google.com/citations?user=Cn-lWgIAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=引用"></a>。
 
 我的研究领域包括：
 - 压缩感知
