@@ -33,7 +33,7 @@ redirect_from:
 - *2019.09 - 2022.01*, <a href="https://www.hitsz.edu.cn/index.html"><img class="svg" src="https://cdn.jsdelivr.net/gh/RedamancyAY/CloudImage@main/img/202310182132949.png" width="23pt"></a> 哈尔滨工业大学（深圳） 计算机科学与技术学院, 广东深圳, 硕士 
 - *2015.09 - 2019.06*, <a href="https://www.scu.edu.cn/"><img class="svg" src="https://cdn.jsdelivr.net/gh/RedamancyAY/CloudImage@main/img/202310182134883.png" width="20pt"></a> 西北大学 计算机科学与技术学院, 陕西西安, 本科
 
-
+<span class='anchor' id='-lwzl'></span>
 # 📝 论文专利
 
 - Zeming Hou, Zhongyun Hua, `Kuiyuan Zhang`, Yushu Zhang. CDNet: Cluster Decision for Deepfake Detection Generalization. *2023 IEEE International Conference on Image Processing (ICIP)*, 2023
@@ -47,5 +47,18 @@ redirect_from:
 
 
  
-<span class='anchor' id='-lwzl'></span>
 
+
+<span class='anchor' id='-ryjx'></span>
+
+# 🏅 荣誉奖项
+- *2019.11* 获得 CCF
+
+<span class='anchor' id='-xshy'></span>
+
+# 🏛️ 学术会议
+
+<span class='anchor' id='-gzsx'></span>
+
+# 💻 工作实习
+- *2023.4 - Now*, 阿里巴巴, 浙江杭州
