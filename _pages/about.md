@@ -32,6 +32,13 @@ redirect_from:
 - *2022.03 - Now*, <a href="https://www.hitsz.edu.cn/index.html"><img class="svg" src="https://cdn.jsdelivr.net/gh/RedamancyAY/CloudImage@main/img/202310182132949.png" width="23pt"></a> 哈尔滨工业大学（深圳） 计算机科学与技术学院, 广东深圳, 攻读博士 
 - *2019.09 - 2022.01*, <a href="https://www.hitsz.edu.cn/index.html"><img class="svg" src="https://cdn.jsdelivr.net/gh/RedamancyAY/CloudImage@main/img/202310182132949.png" width="23pt"></a> 哈尔滨工业大学（深圳） 计算机科学与技术学院, 广东深圳, 硕士 
 - *2015.09 - 2019.06*, <a href="https://www.scu.edu.cn/"><img class="svg" src="https://cdn.jsdelivr.net/gh/RedamancyAY/CloudImage@main/img/202310182134883.png" width="20pt"></a> 西北大学 计算机科学与技术学院, 陕西西安, 本科
+
+
+# 📝 论文专利
+
+
+-	Zhongyun Hua, `Kuiyuan Zhang`, Yuanman Li, Yicong Zhou. Visually secure image encryption using adaptive-thresholding sparsification and parallel compressive sensing. *Signal Processing*, 2021, Volume 183. (JCR:Q2; IF:1.995)  
+[[网页]](https://www.sciencedirect.com/science/article/abs/pii/S0165168421000372) [[PDF]](https://www.sciencedirect.com/science/article/abs/pii/S0165168421000372) 
  
 <span class='anchor' id='-lwzl'></span>
 
