@@ -45,7 +45,6 @@ redirect_from:
 -	Zhongyun Hua, `Kuiyuan Zhang`, Yuanman Li, Yicong Zhou. Visually secure image encryption using adaptive-thresholding sparsification and parallel compressive sensing. *Signal Processing*, 2021, Volume 183. (JCR:Q2; IF:1.995)  
 [[网页]](https://www.sciencedirect.com/science/article/abs/pii/S0165168421000372) [[PDF]](https://www.sciencedirect.com/science/article/abs/pii/S0165168421000372) 
 
- AMS-Net: Adaptive Multi-Scale Network for Image Compressive Sensing
 
  
 <span class='anchor' id='-lwzl'></span>
