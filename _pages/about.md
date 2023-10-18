@@ -36,9 +36,17 @@ redirect_from:
 
 # 📝 论文专利
 
+- Zeming Hou, Zhongyun Hua, `Kuiyuan Zhang`, Yushu Zhang. CDNet: Cluster Decision for Deepfake Detection Generalization. *2023 IEEE International Conference on Image Processing (ICIP)*, 2023
+[[网页]](https://ieeexplore.ieee.org/abstract/document/10223180) [[PDF]](https://ieeexplore.ieee.org/abstract/document/10223180)
+
+-	`Kuiyuan Zhang`, Zhongyun Hua, Yuanman Li, Yongyong Chen, Yicong Zhou. AMS-Net: Adaptive Multi-Scale Network for Image Compressive Sensing. *IEEE Transactions on Multimedia*, 2022 (JCR:Q2; IF:1.995)  
+[[网页]](https://ieeexplore.ieee.org/abstract/document/9855869) [[PDF]](https://ieeexplore.ieee.org/abstract/document/9855869)
 
 -	Zhongyun Hua, `Kuiyuan Zhang`, Yuanman Li, Yicong Zhou. Visually secure image encryption using adaptive-thresholding sparsification and parallel compressive sensing. *Signal Processing*, 2021, Volume 183. (JCR:Q2; IF:1.995)  
 [[网页]](https://www.sciencedirect.com/science/article/abs/pii/S0165168421000372) [[PDF]](https://www.sciencedirect.com/science/article/abs/pii/S0165168421000372) 
+
+ AMS-Net: Adaptive Multi-Scale Network for Image Compressive Sensing
+
  
 <span class='anchor' id='-lwzl'></span>
 
