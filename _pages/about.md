@@ -29,10 +29,9 @@ redirect_from:
 <span class='anchor' id='-xl'></span>
 
 
-
 # 🎓 学历
-- *2022.03 - Now*, <a href="https://www.hitsz.edu.cn/index.html"><img class="svg" src="https://www.hitsz.edu.cn/UserFiles/editor/20190428/1556422325141036720.jpg" width="23pt"></a> 哈尔滨工业大学（深圳） 计算机科学与技术学院, 广东深圳, 攻读博士 
-- *2019.09 - 2022.01*, <a href="https://www.hitsz.edu.cn/index.html"><img class="svg" src="https://www.hitsz.edu.cn/UserFiles/editor/20190428/1556422325141036720.jpg" width="23pt"></a> 哈尔滨工业大学（深圳） 计算机科学与技术学院, 广东深圳, 硕士 
+- *2022.03 - Now*, <a href="https://www.hitsz.edu.cn/index.html"><img class="svg" src="https://cdn.jsdelivr.net/gh/RedamancyAY/CloudImage@main/img/202310182132949.png" width="23pt"></a> 哈尔滨工业大学（深圳） 计算机科学与技术学院, 广东深圳, 攻读博士 
+- *2019.09 - 2022.01*, <a href="https://www.hitsz.edu.cn/index.html"><img class="svg" src="https://cdn.jsdelivr.net/gh/RedamancyAY/CloudImage@main/img/202310182132949.png" width="23pt"></a> 哈尔滨工业大学（深圳） 计算机科学与技术学院, 广东深圳, 硕士 
 - *2015.09 - 2019.06*, <a href="https://www.scu.edu.cn/"><img class="svg" src="/images/SCU_logo.svg" width="20pt"></a> 西北大学 计算机科学与技术学院, 陕西西安, 本科
  
 <span class='anchor' id='-lwzl'></span>
