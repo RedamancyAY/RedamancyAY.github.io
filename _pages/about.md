@@ -18,7 +18,7 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-我将博士毕业于广东深圳的 哈尔滨工业大学 计算机科学与技术学院，我的导师是[花忠云教授](https://huazhongyun.github.io/)。本科毕业于西安的 西北大学 计算机科学与技术学院。我的[google学术主页](https://scholar.google.com/citations?user=Cn-lWgIAAAAJ) <a href='https://scholar.google.com/citations?user=Cn-lWgIAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url_citations | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a><a href='https://scholar.google.com/citations?user=Cn-lWgIAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url_hindex | url_encode }}&logo=Google%20Scholar&labelColor=0000ff&color=ffa500&style=plastic&label=h-index"></a>。
+我将博士毕业于广东深圳的 哈尔滨工业大学 计算机科学与技术学院，我的导师是[花忠云教授](https://huazhongyun.github.io/)。本科毕业于西安的 西北大学 计算机科学与技术学院。 <a href='https://scholar.google.com/citations?user=Cn-lWgIAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url_citations | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a><a href='https://scholar.google.com/citations?user=Cn-lWgIAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url_hindex | url_encode }}&logo=Google%20Scholar&labelColor=0000ff&color=ffa500&style=plastic&label=h-index"></a>。
 
 
 我的研究领域包括：
