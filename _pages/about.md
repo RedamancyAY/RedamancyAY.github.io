@@ -40,8 +40,9 @@ redirect_from:
 
 - `Kuiyuan Zhang`, Zhongyun Hua, Rushi Lan, Yifang Guo, Yushu Zhang, Guoai Xu. "Multi-View Collaborative Learning Network for Speech Deepfake Detection", AAAI 2025, Just Accepted (2024-12).
 
-- `Kuiyuan Zhang`, Zhongyun Hua, Yushu Zhang, Yifang Guo, Tao Xiang. "Robust AI-Synthesized Speech Detection Using Feature Decomposition Learning and Synthesizer Feature Augmentation", IEEE Transactions on Information Forensics and Security, Just Accepted (2024-12).
-- Enji Liang, `Kuiyuan Zhang`, Zhongyun Hua, Xiaohua Jia. "Multi-Scale Feature Attention Fusion for Image Splicing Forgery Detection," ACM Trans. Multimedia Comput. Commun. Appl. Just Accepted (October 2024). doi: 10.1145/3698770 [[URL]](https://dl.acm.org/doi/10.1145/3698770) [[PDF]](https://dl.acm.org/doi/10.1145/3698770)
+- `Kuiyuan Zhang`, Zhongyun Hua, Yushu Zhang, Yifang Guo, Tao Xiang. "Robust AI-Synthesized Speech Detection Using Feature Decomposition Learning and Synthesizer Feature Augmentation", IEEE Transactions on Information Forensics and Security, doi: 10.1109/TIFS.2024.3520001. [[URL]](https://ieeexplore.ieee.org/document/10806877) [[PDF]](https://ieeexplore.ieee.org/document/10806877)
+
+- Enji Liang, `Kuiyuan Zhang`, Zhongyun Hua, Xiaohua Jia. "Multi-Scale Feature Attention Fusion for Image Splicing Forgery Detection," ACM Trans. Multimedia Comput. Commun. Appl., vol. 21, no. 1, p. 18:1-18:20, Dec. 2024. [[URL]](https://dl.acm.org/doi/10.1145/3698770) [[PDF]](https://dl.acm.org/doi/10.1145/3698770)
 
 - `Kuiyuan Zhang`; Zeming Hou; Zhongyun Hua; Yifeng Zheng; Leo Yu Zhang. "Boosting Deepfake Detection Generalizability via Expansive Learning and Confidence Judgement," in IEEE Transactions on Circuits and Systems for Video Technology, doi: 10.1109/TCSVT.2024.3462985. [[URL]](https://ieeexplore.ieee.org/abstract/document/10684474) [[PDF]](https://ieeexplore.ieee.org/abstract/document/10684474)
 
