@@ -75,6 +75,5 @@ redirect_from:
 
 # Test
 
-- <a href='../assets/pdfs/2022011911355693652034.PDF' ></a>
-- <a href='../assets/pdfs/20220119113556936520342.pdf' ></a>
-
+- [](../assets/pdfs/2022011911355693652034.PDF)
+- [](../assets/pdfs/20220119113556936520342.pdf)
