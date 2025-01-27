@@ -36,9 +36,9 @@ redirect_from:
 
 <span class='anchor' id='-lwzl'></span>
 # 📝 论文专利
-- `Kuiyuan Zhang`, Zhongyun Hua, Rushi Lan, Yushu Zhang, Yifang Guo. "Phoneme-Level Feature Discrepancies: A Key to Detecting  Sophisticated Speech Deepfakes", AAAI 2025, Just Accepted (2024-12).
+- `Kuiyuan Zhang`, Zhongyun Hua, Rushi Lan, Yushu Zhang, Yifang Guo. "Phoneme-Level Feature Discrepancies: A Key to Detecting  Sophisticated Speech Deepfakes", AAAI 2025 Oral, Just Accepted (2024-12).
 
-- `Kuiyuan Zhang`, Zhongyun Hua, Rushi Lan, Yifang Guo, Yushu Zhang, Guoai Xu. "Multi-View Collaborative Learning Network for Speech Deepfake Detection", AAAI 2025, Just Accepted (2024-12).
+- `Kuiyuan Zhang`, Zhongyun Hua, Rushi Lan, Yifang Guo, Yushu Zhang, Guoai Xu. "Multi-View Collaborative Learning Network for Speech Deepfake Detection", AAAI 2025 Poster, Just Accepted (2024-12).
 
 - `Kuiyuan Zhang`, Zhongyun Hua, Yushu Zhang, Yifang Guo, Tao Xiang. "Robust AI-Synthesized Speech Detection Using Feature Decomposition Learning and Synthesizer Feature Augmentation", IEEE Transactions on Information Forensics and Security, doi: 10.1109/TIFS.2024.3520001. [[URL]](https://ieeexplore.ieee.org/document/10806877) [[PDF]](https://ieeexplore.ieee.org/document/10806877)
 
@@ -71,14 +71,3 @@ redirect_from:
 
 # 💻 工作实习
 - *2023.4 - 2023.11*, 阿里巴巴, 浙江杭州
-
-
-# Test
-
-- [1](../assets/pdfs/2022011911355693652034.PDF)
-- [2](../assets/pdfs/20220119113556936520342.pdf)
-- [3](https://pub-d5f0132a22cc48c99c2d7e093f1028a6.r2.dev/2022011911355693652034.PDF)
-
-<a href="https://pub-d5f0132a22cc48c99c2d7e093f1028a6.r2.dev/2022011911355693652034.PDF" download="download" >this is a pdf test!</a>
-
-[test](https://download-direct.github.io/?url=https://pub-d5f0132a22cc48c99c2d7e093f1028a6.r2.dev/2022011911355693652034.PDF)
