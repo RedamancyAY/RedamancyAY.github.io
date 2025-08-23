@@ -1,33 +1,160 @@
 - citation: '**Zhang, Kuiyuan**, Hua, Zhongyun, Lan, Rushi, Guo, Yifang, Zhang, Yushu,
-    Xu, Guoai. (2025). *Multi-View Collaborative Learning Network for {{Speech Deepfake
-    Detection*. **Proceedings of the AAAI Conference on {{Artificial Intelligence**.
+    Xu, Guoai. (2025). *Multi-View Collaborative Learning Network for Speech Deepfake
+    Detection*. **Proceedings of the AAAI Conference on Artificial Intelligence**.
     Vol. 39, No. 1, pp. 1075-1083.'
-  citations: 4
-  links: '[URL](https://ojs.aaai.org/index.php/AAAI/article/view/32094) [DOI](https://doi.org/10.1609/aaai.v39i1.32094)'
-  metrics: '📊 被引 4 次 | 📈 IF: 1.995 | 🎯 CCF A'
-  title: Multi-View Collaborative Learning Network for {{Speech Deepfake Detection
-  type: inproceedings
-  venue: Proceedings of the AAAI Conference on {{Artificial Intelligence
+  citations: 0
+  links: <a href="https://doi.org/10.1609/aaai.v39i1.32094"><img src="https://img.shields.io/badge/DOI-ffffff?logo=doi&style=flat"
+    alt="DOI"></a>
+  metrics: <img src="https://img.shields.io/badge/CCF-A-EDEDED?logo=ccf&labelColor=f6f6f6&color=A1C2A&style=flat"
+    alt="CCF分区">
+  title: Multi-View Collaborative Learning Network for Speech Deepfake Detection
+  type: ''
+  venue: Proceedings of the AAAI Conference on Artificial Intelligence
   year: 2025
+- citation: '**Zhang, Kuiyuan**, Hou, Zeming, Hua, Zhongyun, Zheng, Yifeng, Yu Zhang,
+    Leo. (2025). *Boosting Deepfake Detection Generalizability via Expansive Learning
+    and Confidence Judgement*. **IEEE Transactions on Circuits and Systems for Video
+    Technology**. Vol. 35, No. 1, pp. 953-966.'
+  citations: 4
+  links: <a href="https://doi.org/10.1109/TCSVT.2024.3462985"><img src="https://img.shields.io/badge/DOI-ffffff?logo=doi&style=flat"
+    alt="DOI"></a>
+  metrics: <img src="https://img.shields.io/badge/citations-4-4caf50?logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat"
+    alt="被引次数"> <img src="https://img.shields.io/badge/JCR-Q1-EDEDED?logo=journal&labelColor=f6f6f6&color=A1C2A&style=flat"
+    alt="JCR分区"> <img src="https://img.shields.io/badge/中科院-Q1-EDEDED?logo=zhongkeyuan&labelColor=f6f6f6&color=A1C2A&style=flat"
+    alt="中科院分区"> <img src="https://img.shields.io/badge/IF-9.8-EDEDED?logo=impact&labelColor=f6f6f6&color=A1C2A&style=flat"
+    alt="影响因子"> <img src="https://img.shields.io/badge/CCF-B-EDEDED?logo=ccf&labelColor=f6f6f6&color=A1C2A&style=flat"
+    alt="CCF分区">
+  title: Boosting Deepfake Detection Generalizability via Expansive Learning and Confidence
+    Judgement
+  type: ''
+  venue: IEEE Transactions on Circuits and Systems for Video Technology
+  year: 2025
+- citation: '**Zhang, Kuiyuan**, Hua, Zhongyun, Lan, Rushi, Zhang, Yushu, Guo, Yifang.
+    (2025). *Phoneme-Level Feature Discrepancies: A Key to Detecting Sophisticated
+    Speech Deepfakes*. **Proceedings of the AAAI Conference on Artificial Intelligence**.
+    Vol. 39, No. 1, pp. 1066-1074.'
+  citations: 2
+  links: <a href="https://doi.org/10.1609/aaai.v39i1.32093"><img src="https://img.shields.io/badge/DOI-ffffff?logo=doi&style=flat"
+    alt="DOI"></a>
+  metrics: <img src="https://img.shields.io/badge/citations-2-4caf50?logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat"
+    alt="被引次数"> <img src="https://img.shields.io/badge/CCF-A-EDEDED?logo=ccf&labelColor=f6f6f6&color=A1C2A&style=flat"
+    alt="CCF分区">
+  title: 'Phoneme-Level Feature Discrepancies: A Key to Detecting Sophisticated Speech
+    Deepfakes'
+  type: ''
+  venue: Proceedings of the AAAI Conference on Artificial Intelligence
+  year: 2025
+- citation: '**Zhang, Kuiyuan**, Hua, Zhongyun, Zhang, Yushu, Guo, Yifang, Xiang,
+    Tao. (2025). *Robust AI-Synthesized Speech Detection Using Feature Decomposition
+    Learning and Synthesizer Feature Augmentation*. **IEEE Transactions on Information
+    Forensics and Security**. Vol. 20, pp. 871-885.'
+  citations: 4
+  links: <a href="https://doi.org/10.1109/TIFS.2024.3520001"><img src="https://img.shields.io/badge/DOI-ffffff?logo=doi&style=flat"
+    alt="DOI"></a>
+  metrics: <img src="https://img.shields.io/badge/citations-4-4caf50?logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat"
+    alt="被引次数"> <img src="https://img.shields.io/badge/JCR-Q1-EDEDED?logo=journal&labelColor=f6f6f6&color=A1C2A&style=flat"
+    alt="JCR分区"> <img src="https://img.shields.io/badge/中科院-Q1-EDEDED?logo=zhongkeyuan&labelColor=f6f6f6&color=A1C2A&style=flat"
+    alt="中科院分区"> <img src="https://img.shields.io/badge/IF-8.5-EDEDED?logo=impact&labelColor=f6f6f6&color=A1C2A&style=flat"
+    alt="影响因子"> <img src="https://img.shields.io/badge/CCF-A-EDEDED?logo=ccf&labelColor=f6f6f6&color=A1C2A&style=flat"
+    alt="CCF分区">
+  title: Robust AI-Synthesized Speech Detection Using Feature Decomposition Learning
+    and Synthesizer Feature Augmentation
+  type: ''
+  venue: IEEE Transactions on Information Forensics and Security
+  year: 2025
+- citation: 'Liang, Enji, **Zhang, Kuiyuan**, Hua, Zhongyun, Li, Yuanman, Jia, Xiaohua.
+    (2025). *TransCMFD: An Adaptive Transformer for Copy-Move Forgery Detection*.
+    **Neurocomputing**. Vol. 638, pp. 130110.'
+  citations: 0
+  links: <a href="https://doi.org/10.1016/j.neucom.2025.130110"><img src="https://img.shields.io/badge/DOI-ffffff?logo=doi&style=flat"
+    alt="DOI"></a>
+  metrics: <img src="https://img.shields.io/badge/JCR-Q1-EDEDED?logo=journal&labelColor=f6f6f6&color=A1C2A&style=flat"
+    alt="JCR分区"> <img src="https://img.shields.io/badge/中科院-Q2-EDEDED?logo=zhongkeyuan&labelColor=f6f6f6&color=A1C2A&style=flat"
+    alt="中科院分区"> <img src="https://img.shields.io/badge/IF-6.0-EDEDED?logo=impact&labelColor=f6f6f6&color=A1C2A&style=flat"
+    alt="影响因子"> <img src="https://img.shields.io/badge/CCF-C-EDEDED?logo=ccf&labelColor=f6f6f6&color=A1C2A&style=flat"
+    alt="CCF分区">
+  title: 'TransCMFD: An Adaptive Transformer for Copy-Move Forgery Detection'
+  type: ''
+  venue: Neurocomputing
+  year: 2025
+- citation: Liang, Enji, **Zhang, Kuiyuan**, Hua, Zhongyun, Jia, Xiaohua. (2024).
+    *Multi-Scale Feature Attention Fusion for Image Splicing Forgery Detection*. **ACM
+    Transactions on Multimedia Computing, Communications, and Applications (TOMM)**.
+    Vol. 21, No. 1, pp. 18:1-18:20.
+  citations: 2
+  links: <a href="https://doi.org/10.1145/3698770"><img src="https://img.shields.io/badge/DOI-ffffff?logo=doi&style=flat"
+    alt="DOI"></a>
+  metrics: <img src="https://img.shields.io/badge/citations-2-4caf50?logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat"
+    alt="被引次数"> <img src="https://img.shields.io/badge/JCR-Q1-EDEDED?logo=journal&labelColor=f6f6f6&color=A1C2A&style=flat"
+    alt="JCR分区"> <img src="https://img.shields.io/badge/中科院-Q3-EDEDED?logo=zhongkeyuan&labelColor=f6f6f6&color=A1C2A&style=flat"
+    alt="中科院分区"> <img src="https://img.shields.io/badge/IF-5.6-EDEDED?logo=impact&labelColor=f6f6f6&color=A1C2A&style=flat"
+    alt="影响因子"> <img src="https://img.shields.io/badge/CCF-B-EDEDED?logo=ccf&labelColor=f6f6f6&color=A1C2A&style=flat"
+    alt="CCF分区">
+  title: Multi-Scale Feature Attention Fusion for Image Splicing Forgery Detection
+  type: ''
+  venue: ACM Transactions on Multimedia Computing, Communications, and Applications
+    (TOMM)
+  year: 2024
+- citation: 'Hou, Zeming, Hua, Zhongyun, **Zhang, Kuiyuan**, Zhang, Yushu. (2023).
+    *CDNet: Cluster Decision for Deepfake Detection Generalization*. **2023 IEEE International
+    Conference on Image Processing (ICIP)**. pp. 3010-3014.'
+  citations: 4
+  links: <a href="https://doi.org/10.1109/ICIP49359.2023.10223180"><img src="https://img.shields.io/badge/DOI-ffffff?logo=doi&style=flat"
+    alt="DOI"></a>
+  metrics: <img src="https://img.shields.io/badge/citations-4-4caf50?logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat"
+    alt="被引次数"> <img src="https://img.shields.io/badge/CCF-C-EDEDED?logo=ccf&labelColor=f6f6f6&color=A1C2A&style=flat"
+    alt="CCF分区">
+  title: 'CDNet: Cluster Decision for Deepfake Detection Generalization'
+  type: ''
+  venue: 2023 IEEE International Conference on Image Processing (ICIP)
+  year: 2023
+- citation: '**Zhang, Kuiyuan**, Hua, Zhongyun, Li, Yuanman, Zhang, Yushu, Zhou, Yicong.
+    (2023). *Uformer-ICS: A U-Shaped Transformer for Image Compressive Sensing Service*.
+    **IEEE Transactions on Services Computing**. pp. 1-15.'
+  citations: 10
+  links: <a href="https://doi.org/10.1109/TSC.2023.3334446"><img src="https://img.shields.io/badge/DOI-ffffff?logo=doi&style=flat"
+    alt="DOI"></a>
+  metrics: <img src="https://img.shields.io/badge/citations-10-4caf50?logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat"
+    alt="被引次数"> <img src="https://img.shields.io/badge/JCR-Q1-EDEDED?logo=journal&labelColor=f6f6f6&color=A1C2A&style=flat"
+    alt="JCR分区"> <img src="https://img.shields.io/badge/中科院-Q1-EDEDED?logo=zhongkeyuan&labelColor=f6f6f6&color=A1C2A&style=flat"
+    alt="中科院分区"> <img src="https://img.shields.io/badge/IF-5.8-EDEDED?logo=impact&labelColor=f6f6f6&color=A1C2A&style=flat"
+    alt="影响因子"> <img src="https://img.shields.io/badge/CCF-A-EDEDED?logo=ccf&labelColor=f6f6f6&color=A1C2A&style=flat"
+    alt="CCF分区">
+  title: 'Uformer-ICS: A U-Shaped Transformer for Image Compressive Sensing Service'
+  type: ''
+  venue: IEEE Transactions on Services Computing
+  year: 2023
 - citation: '**Zhang, Kuiyuan**, Hua, Zhongyun, Li, Yuanman, Chen, Yongyong, Zhou,
-    Yicong. (2022). *AMS-Net}}: Adaptive Multi-Scale Network for {{Image Compressive
-    Sensing*. **IEEE Transactions on Multimedia**. pp. 1-14.'
-  citations: 166
-  links: '[DOI](https://doi.org/10.1109/TMM.2022.3198323)'
-  metrics: '📊 被引 166 次 | 🏆 JCR Q1 | 📈 IF: 1.995 | 🎯 CCF B'
-  title: 'AMS-Net}}: Adaptive Multi-Scale Network for {{Image Compressive Sensing'
-  type: article
+    Yicong. (2022). *AMS-Net: Adaptive Multi-Scale Network for Image Compressive Sensing*.
+    **IEEE Transactions on Multimedia**. pp. 1-14.'
+  citations: 35
+  links: <a href="https://doi.org/10.1109/TMM.2022.3198323"><img src="https://img.shields.io/badge/DOI-ffffff?logo=doi&style=flat"
+    alt="DOI"></a>
+  metrics: <img src="https://img.shields.io/badge/citations-35-4caf50?logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat"
+    alt="被引次数"> <img src="https://img.shields.io/badge/JCR-Q1-EDEDED?logo=journal&labelColor=f6f6f6&color=A1C2A&style=flat"
+    alt="JCR分区"> <img src="https://img.shields.io/badge/中科院-Q1-EDEDED?logo=zhongkeyuan&labelColor=f6f6f6&color=A1C2A&style=flat"
+    alt="中科院分区"> <img src="https://img.shields.io/badge/IF-9.7-EDEDED?logo=impact&labelColor=f6f6f6&color=A1C2A&style=flat"
+    alt="影响因子"> <img src="https://img.shields.io/badge/CCF-B-EDEDED?logo=ccf&labelColor=f6f6f6&color=A1C2A&style=flat"
+    alt="CCF分区">
+  title: 'AMS-Net: Adaptive Multi-Scale Network for Image Compressive Sensing'
+  type: ''
   venue: IEEE Transactions on Multimedia
   year: 2022
 - citation: Hua, Zhongyun, **Zhang, Kuiyuan**, Li, Yuanman, Zhou, Yicong. (2021).
     *Visually Secure Image Encryption Using Adaptive-Thresholding Sparsification and
     Parallel Compressive Sensing*. **Signal Processing**. Vol. 183, pp. 107998.
   citations: 166
-  links: '[URL](https://www.sciencedirect.com/science/article/pii/S0165168421000372)
-    [GitHub](https://github.com/RedamancyAY/VisuallyEncryptionCS) [DOI](https://doi.org/10.1016/j.sigpro.2021.107998)'
-  metrics: '📊 被引 166 次 | 🏆 JCR Q2 | 📈 IF: 1.995 | 🎯 CCF C'
+  links: <a href="https://github.com/RedamancyAY/VisuallyEncryptionCS"><img src="https://img.shields.io/badge/Github-Code-4caf50?logo=github&color=E87355&style=flat"
+    alt="GitHub"></a> <a href="https://doi.org/10.1016/j.sigpro.2021.107998"><img
+    src="https://img.shields.io/badge/DOI-ffffff?logo=doi&style=flat" alt="DOI"></a>
+  metrics: <img src="https://img.shields.io/badge/citations-166-4caf50?logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat"
+    alt="被引次数"> <img src="https://img.shields.io/badge/JCR-Q2-EDEDED?logo=journal&labelColor=f6f6f6&color=A1C2A&style=flat"
+    alt="JCR分区"> <img src="https://img.shields.io/badge/中科院-Q2-EDEDED?logo=zhongkeyuan&labelColor=f6f6f6&color=A1C2A&style=flat"
+    alt="中科院分区"> <img src="https://img.shields.io/badge/IF-4.662-EDEDED?logo=impact&labelColor=f6f6f6&color=A1C2A&style=flat"
+    alt="影响因子"> <img src="https://img.shields.io/badge/CCF-C-EDEDED?logo=ccf&labelColor=f6f6f6&color=A1C2A&style=flat"
+    alt="CCF分区">
   title: Visually Secure Image Encryption Using Adaptive-Thresholding Sparsification
     and Parallel Compressive Sensing
-  type: article
+  type: ''
   venue: Signal Processing
   year: 2021
