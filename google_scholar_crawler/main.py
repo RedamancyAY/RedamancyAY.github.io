@@ -156,16 +156,15 @@ def write_paper_citations_data():
 
 if __name__ == "__main__":
     
-    print("Starting Google Scholar data retrieval...")
-
-    print("Fetching full Google Scholar data...")
-    get_full_gs_data()
-
-    print("Writing full citations data...")
-    write_full_citations_data()
-    
-    print("Writing h-index data...")    
-    write_hindex_data()
-    
-    print("Writing paper citations data...")
-    write_paper_citations_data()
+    try:
+        print("Starting Google Scholar data retrieval...", flush=True)
+        print("Fetching full Google Scholar data...", flush=True)
+        get_full_gs_data()
+        print("Writing full citations data...", flush=True)
+        write_full_citations_data()
+        print("Writing h-index data...", flush=True)
+        write_hindex_data()
+        print("Writing paper citations data...", flush=True)
+        write_paper_citations_data()
+    except Exception as e:
+        print(f"发生异常: {e}", flush=True)
