@@ -12,15 +12,31 @@ import re
 def get_full_gs_data():
     global author
 
-    author = scholarly.search_author_id(os.environ["GOOGLE_SCHOLAR_ID"])
-    scholarly.fill(author, sections=["basics", "indices", "counts", "publications"])
-    name = author["name"]
+    print("准备获取 author id...", flush=True)
+    try:
+        author = scholarly.search_author_id(os.environ["GOOGLE_SCHOLAR_ID"])
+        print(f"已获取 author id: {author.get('scholar_id', '未知')}", flush=True)
+    except Exception as e:
+        print(f"获取 author id 失败: {e}", flush=True)
+        raise
+
+    print("准备填充 author 数据...", flush=True)
+    try:
+        scholarly.fill(author, sections=["basics", "indices", "counts", "publications"])
+        print("author 数据填充完成", flush=True)
+    except Exception as e:
+        print(f"填充 author 数据失败: {e}", flush=True)
+        raise
+
+    name = author.get("name", "未知")
+    print(f"作者姓名: {name}", flush=True)
     author["updated"] = str(datetime.now())
-    author["publications"] = {v["author_pub_id"]: v for v in author["publications"]}
-    print(json.dumps(author, indent=2))
+    author["publications"] = {v["author_pub_id"]: v for v in author.get("publications", [])}
+    print("准备写入 author 数据到 results/gs_data.json...", flush=True)
     os.makedirs("results", exist_ok=True)
     with open(f"results/gs_data.json", "w") as outfile:
         json.dump(author, outfile, ensure_ascii=False)
+    print("author 数据写入完成", flush=True)
 
 
 def write_full_citations_data():
