@@ -17,10 +17,10 @@ redirect_from:
 {% assign url_hindex = gsDataBaseUrl | append: "google-scholar-stats/gs_data_shieldsio_hindex.json" %}
 
 
-
 <span class='anchor' id='about-me'></span>
 
-我将博士毕业于广东深圳的 哈尔滨工业大学 计算机科学与技术学院，我的导师是[花忠云教授](https://huazhongyun.github.io/)。本科毕业于西安的 西北大学 计算机科学与技术学院。 <a href='https://scholar.google.com/citations?user=Cn-lWgIAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url_citations | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a><a href='https://scholar.google.com/citations?user=Cn-lWgIAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url_hindex | url_encode }}&logo=Google%20Scholar&labelColor=0000ff&color=ffa500&style=plastic&label=h-index"></a>。
+我将博士毕业于广东深圳的 哈尔滨工业大学 计算机科学与技术学院，我的导师是[花忠云教授](https://huazhongyun.github.io/)。本科毕业于西安的 西北大学 计算机科学与技术学院。 <a href='https://scholar.google.com/citations?user=Cn-lWgIAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url_citations | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>
+<a href='https://scholar.google.com/citations?user=Cn-lWgIAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url_hindex | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=H-index"></a>。
 
 
 我的研究领域包括：
@@ -43,40 +43,14 @@ redirect_from:
 <span class='anchor' id='-lwzl'></span>
 # 📝 论文专利
 
+<!-- {% for pub in site.data.publications %}
+- <span class="citation">{{ pub.citation }}</span>{% if pub.metrics %} <span class="metrics">{{ pub.metrics }}</span>{% endif %}{% if pub.links %} <span class="links">{{ pub.links }}</span>{% endif %}
+{% endfor %} -->
+
+
 {% for pub in site.data.publications %}
-- {{ pub.citation | markdownify }}
-  {% if pub.metrics %}
-  <div class="metrics">{{ pub.metrics }}</div>
-  {% endif %}
-  {% if pub.links %}
-  <div class="links">{{ pub.links | markdownify }}</div>
-  {% endif %}
+- <span class="citation">{{ pub.citation }}</span>{% if pub.citations_url %}<span class="metrics"><img src="https://img.shields.io/endpoint?url={{ gsDataBaseUrl | append: pub.citations_url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations" alt="被引次数"></span>{% endif %}{% if pub.metrics %}<span class="metrics">{{ pub.metrics }}</span>{% endif %}{% if pub.links %}<span class="links">{{ pub.links }}</span>{% endif %}
 {% endfor %}
-
-
-
-# 📝 论文专利
-- `Kuiyuan Zhang`, Zhongyun Hua, Rushi Lan, Yushu Zhang, Yifang Guo. "Phoneme-Level Feature Discrepancies: A Key to Detecting  Sophisticated Speech Deepfakes", AAAI 2025 Oral, Just Accepted (2024-12).
-
-- `Kuiyuan Zhang`, Zhongyun Hua, Rushi Lan, Yifang Guo, Yushu Zhang, Guoai Xu. "Multi-View Collaborative Learning Network for Speech Deepfake Detection", AAAI 2025 Poster, Just Accepted (2024-12).
-
-- `Kuiyuan Zhang`, Zhongyun Hua, Yushu Zhang, Yifang Guo, Tao Xiang. "Robust AI-Synthesized Speech Detection Using Feature Decomposition Learning and Synthesizer Feature Augmentation", IEEE Transactions on Information Forensics and Security, doi: 10.1109/TIFS.2024.3520001. [[URL]](https://ieeexplore.ieee.org/document/10806877) [[PDF]](https://ieeexplore.ieee.org/document/10806877)
-
-- Enji Liang, `Kuiyuan Zhang`, Zhongyun Hua, Xiaohua Jia. "Multi-Scale Feature Attention Fusion for Image Splicing Forgery Detection," ACM Trans. Multimedia Comput. Commun. Appl., vol. 21, no. 1, p. 18:1-18:20, Dec. 2024. [[URL]](https://dl.acm.org/doi/10.1145/3698770) [[PDF]](https://dl.acm.org/doi/10.1145/3698770)
-
-- `Kuiyuan Zhang`; Zeming Hou; Zhongyun Hua; Yifeng Zheng; Leo Yu Zhang. "Boosting Deepfake Detection Generalizability via Expansive Learning and Confidence Judgement," in IEEE Transactions on Circuits and Systems for Video Technology, doi: 10.1109/TCSVT.2024.3462985. [[URL]](https://ieeexplore.ieee.org/abstract/document/10684474) [[PDF]](https://ieeexplore.ieee.org/abstract/document/10684474)
-
-- `Kuiyuan Zhang`; Zhongyun Hua; Yuanman Li; Yushu Zhang; Yicong Zhou. Uformer-ICS: A U-Shaped Transformer for Image Compressive Sensing Service. in IEEE Transactions on Services Computing, doi: 10.1109/TSC.2023.3334446. [[URL]](https://ieeexplore.ieee.org/abstract/document/10323186) [[PDF]](https://ieeexplore.ieee.org/abstract/document/10323186)
-
-- Zeming Hou, Zhongyun Hua, `Kuiyuan Zhang`, Yushu Zhang. CDNet: Cluster Decision for Deepfake Detection Generalization. *2023 IEEE International Conference on Image Processing (ICIP)*, 2023
-[[URL]](https://ieeexplore.ieee.org/abstract/document/10223180) [[PDF]](https://ieeexplore.ieee.org/abstract/document/10223180)
-
--	`Kuiyuan Zhang`, Zhongyun Hua, Yuanman Li, Yongyong Chen, Yicong Zhou. AMS-Net: Adaptive Multi-Scale Network for Image Compressive Sensing. *IEEE Transactions on Multimedia*, 2022 (JCR:Q2; IF:1.995)  
-[[URL]](https://ieeexplore.ieee.org/abstract/document/9855869) [[PDF]](https://ieeexplore.ieee.org/abstract/document/9855869)
-
--	Zhongyun Hua, `Kuiyuan Zhang`, Yuanman Li, Yicong Zhou. Visually secure image encryption using adaptive-thresholding sparsification and parallel compressive sensing. *Signal Processing*, 2021, Volume 183. (JCR:Q2; IF:1.995)  
-[[URL]](https://www.sciencedirect.com/science/article/abs/pii/S0165168421000372) [[PDF]](https://www.sciencedirect.com/science/article/abs/pii/S0165168421000372) 
-
 
 <span class='anchor' id='-ryjx'></span>
 
