@@ -14,8 +14,17 @@ def get_full_gs_data():
 
     print("准备获取 author id...", flush=True)
     try:
-        print("使用 GOOGLE_SCHOLAR_ID 环境变量中的 ID 进行查询", os.environ["GOOGLE_SCHOLAR_ID"], flush=True)
-        author = scholarly.search_author_id(os.environ["GOOGLE_SCHOLAR_ID"])
+        print("使用 GOOGLE_SCHOLAR_ID 环境变量中的 ID 进行查询", flush=True)
+        
+        try:
+            id = os.environ["GOOGLE_SCHOLAR_ID"]
+        except Exception as e:
+            print("警告：未设置 GOOGLE_SCHOLAR_ID 环境变量，使用默认 ID 代替", e, flush=True)
+            id = "Cn-lWgIAAAAJ"
+        
+        print(f"查询 author id: {id}", flush=True)
+        
+        author = scholarly.search_author_id(id)
         print(f"已获取 author id: {author.get('scholar_id', '未知')}", flush=True)
     except Exception as e:
         print(f"获取 author id 失败: {e}", flush=True)
@@ -172,8 +181,8 @@ def write_paper_citations_data():
         
         print(f"\t \t Paper: {title}, Year: {year}, Citations: {citation_number}", flush=True)
         
-        print("\t \t Writing to results/paper_{year}_{pub_title_norm[:30]}.md", flush=True)
-        with open(f"results/paper_{year}_{pub_title_norm[:30]}.md", "w", encoding='utf-8') as outfile:
+        print("\t \t Writing to results/paper_{year}_{pub_title_norm[:30]}.json", flush=True)
+        with open(f"results/paper_{year}_{pub_title_norm[:30]}.json", "w", encoding='utf-8') as outfile:
             shieldio_data = {
                 "schemaVersion": 1,
                 "label": "citations",
