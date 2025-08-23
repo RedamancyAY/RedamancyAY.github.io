@@ -75,8 +75,9 @@ def clean_bibtex_field(field_value):
 
 
 def parse_bibtex_with_parser(bib_content):
-    """使用 bibtexparser 解析 BibTeX 文件（新版API）"""
-    bib_database = bibtexparser.parse_string(bib_content)
+    """使用新版 bibtexparser 解析 BibTeX 文件"""
+    parser = bibtexparser.bparser.BibTexParser(common_strings=True)
+    bib_database = bibtexparser.loads(bib_content, parser=parser)
     publications = []
     for entry in bib_database.entries:
         pub = {k.lower(): clean_bibtex_field(v) for k, v in entry.items()}
