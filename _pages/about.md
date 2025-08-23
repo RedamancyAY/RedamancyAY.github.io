@@ -37,6 +37,24 @@ redirect_from:
 - *2015.09 - 2019.06*, <a href="https://www.scu.edu.cn/"><img class="svg" src="https://cdn.jsdelivr.net/gh/RedamancyAY/CloudImage@main/img/202310182134883.png" width="20pt"></a> 西北大学 计算机科学与技术学院, 陕西西安, 本科
 
 <span class='anchor' id='-lwzl'></span>
+
+
+
+<span class='anchor' id='-lwzl'></span>
+# 📝 论文专利
+
+{% for pub in site.data.publications %}
+- {{ pub.citation | markdownify }}
+  {% if pub.metrics %}
+  <div class="metrics">{{ pub.metrics }}</div>
+  {% endif %}
+  {% if pub.links %}
+  <div class="links">{{ pub.links | markdownify }}</div>
+  {% endif %}
+{% endfor %}
+
+
+
 # 📝 论文专利
 - `Kuiyuan Zhang`, Zhongyun Hua, Rushi Lan, Yushu Zhang, Yifang Guo. "Phoneme-Level Feature Discrepancies: A Key to Detecting  Sophisticated Speech Deepfakes", AAAI 2025 Oral, Just Accepted (2024-12).
 

@@ -1,0 +1,33 @@
+- citation: '**Zhang, Kuiyuan**, Hua, Zhongyun, Lan, Rushi, Guo, Yifang, Zhang, Yushu,
+    Xu, Guoai. (2025). *Multi-View Collaborative Learning Network for {{Speech Deepfake
+    Detection*. **Proceedings of the AAAI Conference on {{Artificial Intelligence**.
+    Vol. 39, No. 1, pp. 1075-1083.'
+  citations: 4
+  links: '[URL](https://ojs.aaai.org/index.php/AAAI/article/view/32094) [DOI](https://doi.org/10.1609/aaai.v39i1.32094)'
+  metrics: '📊 被引 4 次 | 📈 IF: 1.995 | 🎯 CCF A'
+  title: Multi-View Collaborative Learning Network for {{Speech Deepfake Detection
+  type: inproceedings
+  venue: Proceedings of the AAAI Conference on {{Artificial Intelligence
+  year: 2025
+- citation: '**Zhang, Kuiyuan**, Hua, Zhongyun, Li, Yuanman, Chen, Yongyong, Zhou,
+    Yicong. (2022). *AMS-Net}}: Adaptive Multi-Scale Network for {{Image Compressive
+    Sensing*. **IEEE Transactions on Multimedia**. pp. 1-14.'
+  citations: 166
+  links: '[DOI](https://doi.org/10.1109/TMM.2022.3198323)'
+  metrics: '📊 被引 166 次 | 🏆 JCR Q1 | 📈 IF: 1.995 | 🎯 CCF B'
+  title: 'AMS-Net}}: Adaptive Multi-Scale Network for {{Image Compressive Sensing'
+  type: article
+  venue: IEEE Transactions on Multimedia
+  year: 2022
+- citation: Hua, Zhongyun, **Zhang, Kuiyuan**, Li, Yuanman, Zhou, Yicong. (2021).
+    *Visually Secure Image Encryption Using Adaptive-Thresholding Sparsification and
+    Parallel Compressive Sensing*. **Signal Processing**. Vol. 183, pp. 107998.
+  citations: 166
+  links: '[URL](https://www.sciencedirect.com/science/article/pii/S0165168421000372)
+    [GitHub](https://github.com/RedamancyAY/VisuallyEncryptionCS) [DOI](https://doi.org/10.1016/j.sigpro.2021.107998)'
+  metrics: '📊 被引 166 次 | 🏆 JCR Q2 | 📈 IF: 1.995 | 🎯 CCF C'
+  title: Visually Secure Image Encryption Using Adaptive-Thresholding Sparsification
+    and Parallel Compressive Sensing
+  type: article
+  venue: Signal Processing
+  year: 2021
