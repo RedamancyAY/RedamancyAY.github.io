@@ -152,4 +152,9 @@ def write_paper_citations_data():
             }
             json.dump(shieldio_data, outfile, ensure_ascii=False)
 
-    
+
+if __name__ == "__main__":
+    get_full_gs_data()
+    write_full_citations_data()
+    write_hindex_data()
+    write_paper_citations_data()
