@@ -155,7 +155,17 @@ def write_paper_citations_data():
 
 
 if __name__ == "__main__":
+    
+    print("Starting Google Scholar data retrieval...")
+
+    print("Fetching full Google Scholar data...")
     get_full_gs_data()
+
+    print("Writing full citations data...")
     write_full_citations_data()
+    
+    print("Writing h-index data...")    
     write_hindex_data()
+    
+    print("Writing paper citations data...")
     write_paper_citations_data()
