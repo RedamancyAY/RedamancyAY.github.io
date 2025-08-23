@@ -172,6 +172,7 @@ def write_paper_citations_data():
         
         print(f"\t \t Paper: {title}, Year: {year}, Citations: {citation_number}", flush=True)
         
+        print("\t \t Writing to results/paper_{year}_{pub_title_norm[:30]}.md", flush=True)
         with open(f"results/paper_{year}_{pub_title_norm[:30]}.md", "w", encoding='utf-8') as outfile:
             shieldio_data = {
                 "schemaVersion": 1,
@@ -179,7 +180,7 @@ def write_paper_citations_data():
                 "message": f"{citation_number}",
             }
             json.dump(shieldio_data, outfile, ensure_ascii=False)
-
+            print("\t \t File written.", flush=True)
 
 if __name__ == "__main__":
     
