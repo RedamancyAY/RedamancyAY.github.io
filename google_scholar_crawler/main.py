@@ -161,14 +161,17 @@ def write_paper_citations_data():
         print("警告：找不到 gs-data.json 文件，将不包含引用数据", flush=True)
         
         
-    for pub in publications:
+    for i, pub in enumerate(publications):
         title = pub.get('title', '')
-        print(f"Processing paper: {title}", flush=True)
+        print(f"{i}/{len(publications)}: Processing paper: {title}", flush=True)
         
         citation_number = get_paper_citations(pub, gs_data)
         pub_title_norm = normalize_title(pub.get('title', ''))
         date_str = pub.get('date', pub.get('year', ''))
         year = date_str.split('-')[0] if date_str else ''
+        
+        print(f"\t \t Paper: {title}, Year: {year}, Citations: {citation_number}", flush=True)
+        
         with open(f"results/paper_{year}_{pub_title_norm[:30]}.md", "w", encoding='utf-8') as outfile:
             shieldio_data = {
                 "schemaVersion": 1,
