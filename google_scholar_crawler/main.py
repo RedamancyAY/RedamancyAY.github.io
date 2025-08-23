@@ -136,6 +136,10 @@ def get_paper_citations(pub, gs_data):
             
 
 def write_paper_citations_data():
+    print(os.listdir('../'), flush=True)
+    
+    
+    
     with open('../paper.bib', 'r', encoding='utf-8') as f:
         bib_content = f.read()
     publications = parse_bibtex_with_parser(bib_content)
@@ -154,7 +158,7 @@ def write_paper_citations_data():
         except Exception as e:
             print(f"警告：读取 gs-data.json 时出错: {e}")
     else:
-        print("警告：找不到 gs-data.json 文件，将不包含引用数据")
+        print("警告：找不到 gs-data.json 文件，将不包含引用数据", flush=True)
         
         
     for pub in publications:
