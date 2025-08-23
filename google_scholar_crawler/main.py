@@ -162,6 +162,9 @@ def write_paper_citations_data():
         
         
     for pub in publications:
+        title = pub.get('title', '')
+        print(f"Processing paper: {title}", flush=True)
+        
         citation_number = get_paper_citations(pub, gs_data)
         pub_title_norm = normalize_title(pub.get('title', ''))
         date_str = pub.get('date', pub.get('year', ''))
