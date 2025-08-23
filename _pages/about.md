@@ -25,9 +25,9 @@ redirect_from:
 
 我的研究领域包括：
 - 压缩感知
+- 图像加密
 - 多模态deepfake检测
   
-
 
 <span class='anchor' id='-xl'></span>
 
