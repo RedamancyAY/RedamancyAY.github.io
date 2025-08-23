@@ -191,6 +191,8 @@ def write_paper_citations_data():
             json.dump(shieldio_data, outfile, ensure_ascii=False)
             print("\t \t File written.", flush=True)
 
+    print(os.listdir('results'), flush=True)
+
 if __name__ == "__main__":
     
     try:
