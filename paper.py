@@ -85,14 +85,8 @@ def clean_bibtex_field(field_value):
 #     return publications
 
 
-
-
-
-def format_apa(pub, gs_data, highlight_names=None):
+def format_apa(pub, highlight_names=None):
     """格式化为 APA 引用格式"""
-    # 获取引用数量（优化匹配逻辑）
-    citations = get_paper_citations(pub, gs_data)
-
     # 格式化作者并高亮
     authors = pub.get("author", "").replace(" and ", ", ")
     if highlight_names:
@@ -146,22 +140,6 @@ def format_apa(pub, gs_data, highlight_names=None):
 
     # 添加指标
     metrics = []
-    # if citations > 0:
-    #     # metrics.append(
-    #     #     f'<img src="https://img.shields.io/badge/citations-{citations}-4caf50?logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat" alt="被引次数">'
-    #     # )
-    #     pub_title_norm = normalize_title(pub.get("title", ""))[:30]
-    #     year = str(pub.get("year", "")) if pub.get("year", "") else ""
-    #     endpoint_url = f"{{{{gsDataBaseUrl}}}}/google-scholar-stats/paper_{year}_{pub_title_norm}.json"
-    #     endpoint_url_liquid = f"{{ {endpoint_url} | url_encode }}"
-        
-
-    #     # 使用 shields.io endpoint
-    #     metrics.append(
-    #         f'<img src="https://img.shields.io/endpoint?url={endpoint_url_liquid}" alt="被引次数">'
-    #     )
-
-
     if pub.get("jcr") and pub.get("jcr") != "None":
         metrics.append(
             f'<img src="https://img.shields.io/badge/JCR-{pub["jcr"]}-EDEDED?logo=journal&labelColor=f6f6f6&color=A1C2A&style=flat" alt="JCR分区">'
@@ -201,7 +179,6 @@ def format_apa(pub, gs_data, highlight_names=None):
         "citations_url": citations_url,  # 新增字段
         "links": " ".join(links) if links else "",
         "year": int(year) if year.isdigit() else 0,
-        "citations": citations,
         "type": pub.get("type", ""),
         "venue": clean_bibtex_field(venue) if venue else "",
         "title": clean_bibtex_field(pub.get("title", "")),
@@ -219,22 +196,6 @@ def main():
     with open("paper.bib", "r", encoding="utf-8") as f:
         bib_content = f.read()
 
-    # 读取 Google Scholar 数据（可选）
-    gs_data = None
-    if os.path.exists("gs-data.json"):
-        try:
-            with open("gs-data.json", "r", encoding="utf-8") as f:
-                content = f.read().strip()
-                if content:
-                    gs_data = json.loads(content)
-                else:
-                    print("警告：gs-data.json 文件为空")
-        except json.JSONDecodeError as e:
-            print(f"警告：无法解析 gs-data.json 文件: {e}")
-        except Exception as e:
-            print(f"警告：读取 gs-data.json 时出错: {e}")
-    else:
-        print("警告：找不到 gs-data.json 文件，将不包含引用数据")
 
     # 使用 bibtexparser 解析和格式化
     publications = parse_bibtex_with_parser(bib_content)
@@ -253,7 +214,7 @@ def main():
 
     formatted_pubs = []
     for pub in publications:
-        formatted = format_apa(pub, gs_data, HIGHLIGHT_NAMES)
+        formatted = format_apa(pub, HIGHLIGHT_NAMES)
         formatted_pubs.append(formatted)
 
     formatted_pubs.sort(key=lambda x: x["year"], reverse=True)

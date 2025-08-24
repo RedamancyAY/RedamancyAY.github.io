@@ -19,8 +19,10 @@ def get_full_gs_data():
         try:
             id = os.environ["GOOGLE_SCHOLAR_ID"]
         except Exception as e:
-            print("警告：未设置 GOOGLE_SCHOLAR_ID 环境变量，使用默认 ID 代替", e, flush=True)
-            id = "Cn-lWgIAAAAJ"
+            # print("警告：未设置 GOOGLE_SCHOLAR_ID 环境变量，使用默认 ID 代替", e, flush=True)
+            # id = "Cn-lWgIAAAAJ"
+            raise RuntimeError("未设置 GOOGLE_SCHOLAR_ID 环境变量，无法继续")
+        
         
         print(f"查询 author id: {id}", flush=True)
         

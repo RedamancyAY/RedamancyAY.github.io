@@ -2,7 +2,6 @@
     Xu, Guoai. (2025). *Multi-View Collaborative Learning Network for Speech Deepfake
     Detection*. **Proceedings of the AAAI Conference on Artificial Intelligence**.
     Vol. 39, No. 1, pp. 1075-1083.'
-  citations: 0
   citations_url: google-scholar-stats/paper_2025_multiviewcollaborativelearning.json
   links: <a href="https://doi.org/10.1609/aaai.v39i1.32094"><img src="https://img.shields.io/badge/DOI-ffffff?logo=doi&style=flat"
     alt="DOI"></a>
@@ -16,7 +15,6 @@
     Leo. (2025). *Boosting Deepfake Detection Generalizability via Expansive Learning
     and Confidence Judgement*. **IEEE Transactions on Circuits and Systems for Video
     Technology**. Vol. 35, No. 1, pp. 953-966.'
-  citations: 4
   citations_url: google-scholar-stats/paper_2025_boostingdeepfakedetectiongener.json
   links: <a href="https://doi.org/10.1109/TCSVT.2024.3462985"><img src="https://img.shields.io/badge/DOI-ffffff?logo=doi&style=flat"
     alt="DOI"></a>
@@ -34,7 +32,6 @@
     (2025). *Phoneme-Level Feature Discrepancies: A Key to Detecting Sophisticated
     Speech Deepfakes*. **Proceedings of the AAAI Conference on Artificial Intelligence**.
     Vol. 39, No. 1, pp. 1066-1074.'
-  citations: 2
   citations_url: google-scholar-stats/paper_2025_phonemelevelfeaturediscrepanci.json
   links: <a href="https://doi.org/10.1609/aaai.v39i1.32093"><img src="https://img.shields.io/badge/DOI-ffffff?logo=doi&style=flat"
     alt="DOI"></a>
@@ -49,7 +46,6 @@
     Tao. (2025). *Robust AI-Synthesized Speech Detection Using Feature Decomposition
     Learning and Synthesizer Feature Augmentation*. **IEEE Transactions on Information
     Forensics and Security**. Vol. 20, pp. 871-885.'
-  citations: 4
   citations_url: google-scholar-stats/paper_2025_robustaisynthesizedspeechdetec.json
   links: <a href="https://doi.org/10.1109/TIFS.2024.3520001"><img src="https://img.shields.io/badge/DOI-ffffff?logo=doi&style=flat"
     alt="DOI"></a>
@@ -66,7 +62,6 @@
 - citation: 'Liang, Enji, **Zhang, Kuiyuan**, Hua, Zhongyun, Li, Yuanman, Jia, Xiaohua.
     (2025). *TransCMFD: An Adaptive Transformer for Copy-Move Forgery Detection*.
     **Neurocomputing**. Vol. 638, pp. 130110.'
-  citations: 0
   citations_url: google-scholar-stats/paper_2025_transcmfdanadaptivetransformer.json
   links: <a href="https://doi.org/10.1016/j.neucom.2025.130110"><img src="https://img.shields.io/badge/DOI-ffffff?logo=doi&style=flat"
     alt="DOI"></a>
@@ -83,7 +78,6 @@
     *Multi-Scale Feature Attention Fusion for Image Splicing Forgery Detection*. **ACM
     Transactions on Multimedia Computing, Communications, and Applications (TOMM)**.
     Vol. 21, No. 1, pp. 18:1-18:20.
-  citations: 2
   citations_url: google-scholar-stats/paper_2024_multiscalefeatureattentionfusi.json
   links: <a href="https://doi.org/10.1145/3698770"><img src="https://img.shields.io/badge/DOI-ffffff?logo=doi&style=flat"
     alt="DOI"></a>
@@ -100,7 +94,6 @@
 - citation: 'Hou, Zeming, Hua, Zhongyun, **Zhang, Kuiyuan**, Zhang, Yushu. (2023).
     *CDNet: Cluster Decision for Deepfake Detection Generalization*. **2023 IEEE International
     Conference on Image Processing (ICIP)**. pp. 3010-3014.'
-  citations: 4
   citations_url: google-scholar-stats/paper_2023_cdnetclusterdecisionfordeepfak.json
   links: <a href="https://doi.org/10.1109/ICIP49359.2023.10223180"><img src="https://img.shields.io/badge/DOI-ffffff?logo=doi&style=flat"
     alt="DOI"></a>
@@ -113,7 +106,6 @@
 - citation: '**Zhang, Kuiyuan**, Hua, Zhongyun, Li, Yuanman, Zhang, Yushu, Zhou, Yicong.
     (2023). *Uformer-ICS: A U-Shaped Transformer for Image Compressive Sensing Service*.
     **IEEE Transactions on Services Computing**. pp. 1-15.'
-  citations: 10
   citations_url: google-scholar-stats/paper_2023_uformericsaushapedtransformerf.json
   links: <a href="https://doi.org/10.1109/TSC.2023.3334446"><img src="https://img.shields.io/badge/DOI-ffffff?logo=doi&style=flat"
     alt="DOI"></a>
@@ -129,7 +121,6 @@
 - citation: '**Zhang, Kuiyuan**, Hua, Zhongyun, Li, Yuanman, Chen, Yongyong, Zhou,
     Yicong. (2022). *AMS-Net: Adaptive Multi-Scale Network for Image Compressive Sensing*.
     **IEEE Transactions on Multimedia**. pp. 1-14.'
-  citations: 35
   citations_url: google-scholar-stats/paper_2022_amsnetadaptivemultiscalenetwor.json
   links: <a href="https://doi.org/10.1109/TMM.2022.3198323"><img src="https://img.shields.io/badge/DOI-ffffff?logo=doi&style=flat"
     alt="DOI"></a>
@@ -145,7 +136,6 @@
 - citation: Hua, Zhongyun, **Zhang, Kuiyuan**, Li, Yuanman, Zhou, Yicong. (2021).
     *Visually Secure Image Encryption Using Adaptive-Thresholding Sparsification and
     Parallel Compressive Sensing*. **Signal Processing**. Vol. 183, pp. 107998.
-  citations: 166
   citations_url: google-scholar-stats/paper_2021_visuallysecureimageencryptionu.json
   links: <a href="https://github.com/RedamancyAY/VisuallyEncryptionCS"><img src="https://img.shields.io/badge/Github-Code-4caf50?logo=github&color=E87355&style=flat"
     alt="GitHub"></a> <a href="https://doi.org/10.1016/j.sigpro.2021.107998"><img
