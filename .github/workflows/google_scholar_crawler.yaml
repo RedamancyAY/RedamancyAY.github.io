@@ -1,4 +1,4 @@
-name: Get Citation Data
+name: Get Citation Data for New template
 
 on: 
  page_build: 
