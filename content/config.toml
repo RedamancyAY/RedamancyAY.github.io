@@ -1,26 +1,26 @@
 [site]
-title = "Jiale Liu"
-description = "PhD student at the University of Example."
+title = "Academic Homepage"
+description = "PhD student at Harbin Institute of Technology (Shenzhen)."
 favicon = "/favicon.svg"
-last_updated = "November 18, 2025"
+last_updated = "December 12, 2025"
 
 [author]
-name = "Jiale Liu"
+name = "Kuiyuan Zhang"
 title = "PhD Student"
-institution = "University of Example"
+institution = "Harbin Institute of Technology (Shenzhen)"
 avatar = "/bio.jpg"
 
 [social]
 # Contact information (leave blank or delete to hide)
 
-email = "john.doe@example.com"
-location = "City, Country"
-location_url = "https://maps.google.com"
+email = "zkyhitsz@gmail.com"
+location = "Shenzhen, China"
+location_url = "https://www.google.com/maps/place/%E6%B7%B1%E5%9C%B3%E5%A4%A7%E5%AD%A6%E5%9F%8E/@22.5901572,113.9719612,17.7z/data=!4m14!1m7!3m6!1s0x3403f28c1e39c995:0x4e40ceb6480e6696!2z5rex5Zyz5aSn5a2m5Z-O!8m2!3d22.59264!4d113.971569!16s%2Fm%2F0dgs81d!3m5!1s0x3403f28c1e39c995:0x4e40ceb6480e6696!8m2!3d22.59264!4d113.971569!16s%2Fm%2F0dgs81d?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D"
 location_details = [
-  "Room 123, Science Building,",
-  "University Avenue, City, Country"
+  "Harbin Institute of Technology (Shenzhen),",
+  "NanShan, Shenzhen, China"
 ]
-google_scholar = "https://scholar.google.com"
+google_scholar = "https://scholar.google.com/citations?user=Cn-lWgIAAAAJ"
 orcid = "https://orcid.org"
 github = "https://github.com"
 linkedin = "https://linkedin.com"
