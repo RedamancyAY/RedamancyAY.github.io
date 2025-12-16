@@ -25,6 +25,7 @@ export default function PublicationsList({ config, publications, embedded = fals
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedYear, setSelectedYear] = useState<number | 'all'>('all');
     const [selectedType, setSelectedType] = useState<string | 'all'>('all');
+    const [selectedCCF, setSelectedCCF] = useState<string | 'all'>('all');
     const [showFilters, setShowFilters] = useState(false);
     const [expandedBibtexId, setExpandedBibtexId] = useState<string | null>(null);
     const [expandedAbstractId, setExpandedAbstractId] = useState<string | null>(null);
@@ -40,6 +41,12 @@ export default function PublicationsList({ config, publications, embedded = fals
         return uniqueTypes.sort();
     }, [publications]);
 
+    const ccfRatings = useMemo(() => {  
+    const uniqueCCFs = Array.from(new Set(publications.map(p => p.ccf).filter(Boolean)));  
+        return uniqueCCFs.sort();  
+    }, [publications]);
+
+
     // Filter publications
     const filteredPublications = useMemo(() => {
         return publications.filter(pub => {
@@ -51,10 +58,11 @@ export default function PublicationsList({ config, publications, embedded = fals
 
             const matchesYear = selectedYear === 'all' || pub.year === selectedYear;
             const matchesType = selectedType === 'all' || pub.type === selectedType;
-
-            return matchesSearch && matchesYear && matchesType;
+            const matchesCCF = selectedCCF === 'all' || pub.ccf === selectedCCF;  
+  
+            return matchesSearch && matchesYear && matchesType && matchesCCF;
         });
-    }, [publications, searchQuery, selectedYear, selectedType]);
+    }, [publications, searchQuery, selectedYear, selectedType, selectedCCF]);
 
     return (
         <motion.div
@@ -175,6 +183,39 @@ export default function PublicationsList({ config, publications, embedded = fals
                                         ))}
                                     </div>
                                 </div>
+                                {/* CCF Filter */}  
+                                <div className="space-y-2">  
+                                    <label className="text-sm font-medium text-neutral-700 dark:text-neutral-300 flex items-center">  
+                                        <BookOpenIcon className="h-4 w-4 mr-1" /> CCF  
+                                    </label>  
+                                    <div className="flex flex-wrap gap-2">  
+                                        <button  
+                                            onClick={() => setSelectedCCF('all')}  
+                                            className={cn(  
+                                                "px-3 py-1 text-xs rounded-full transition-colors",  
+                                                selectedCCF === 'all'  
+                                                    ? "bg-accent text-white"  
+                                                    : "bg-white dark:bg-neutral-800 text-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-700"  
+                                            )}  
+                                        >  
+                                            All  
+                                        </button>  
+                                        {ccfRatings.map(ccf => (  
+                                            <button  
+                                                key={ccf}  
+                                                onClick={() => setSelectedCCF(ccf)}  
+                                                className={cn(  
+                                                    "px-3 py-1 text-xs rounded-full transition-colors",  
+                                                    selectedCCF === ccf  
+                                                        ? "bg-accent text-white"  
+                                                        : "bg-white dark:bg-neutral-800 text-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-700"  
+                                                )}  
+                                            >  
+                                                CCF-{ccf}  
+                                            </button>  
+                                        ))}  
+                                    </div>  
+                                </div>
                             </div>
                         </motion.div>
                     )}
@@ -229,8 +270,17 @@ export default function PublicationsList({ config, publications, embedded = fals
                                     </p>
                                     <p className="text-sm font-medium text-neutral-800 dark:text-neutral-600 mb-3">
                                         {pub.journal || pub.conference} {pub.year}
+                                        {pub.ccf && (  
+                                        <span className={cn(  
+                                        "ml-2 px-2 py-0.5 text-xs font-medium rounded",  
+                                        pub.ccf === 'A' ? "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400" :  
+                                        pub.ccf === 'B' ? "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400" :  
+                                        "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400"  
+                                        )}>  
+                                        CCF-{pub.ccf}  
+                                        </span>  
+                                    )}
                                     </p>
-
                                     {pub.description && (
                                         <p className="text-sm text-neutral-600 dark:text-neutral-500 mb-4 line-clamp-3">
                                             {pub.description}

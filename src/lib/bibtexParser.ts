@@ -46,9 +46,22 @@ export function parseBibTeX(bibtexContent: string): Publication[] {
     const authors = parseAuthors(tags.author || '', authorName);
 
     // Parse year and month
-    const year = parseInt(tags.year) || new Date().getFullYear();
+    let year = parseInt(tags.year);  
+    if (!year && tags.date) {  
+      // Extract year from date field (supports formats like "2024-03-15", "2024", etc.)  
+      const dateMatch = tags.date.match(/(\d{4})/);  
+      if (dateMatch) {  
+        year = parseInt(dateMatch[1]);  
+      }  
+    }  
+    year = year || new Date().getFullYear();
+    // const year = parseInt(tags.year) || new Date().getFullYear();
     const monthStr = tags.month?.toLowerCase() || '';
     const month = monthMapping[monthStr] || (parseInt(monthStr) || undefined);
+
+
+    // CCF, JCR
+    const ccf = tags.ccf || undefined;  // 添加这行  
 
     // Determine type
     const type = typeMapping[entry.entryType.toLowerCase()] || 'journal';
@@ -75,8 +88,11 @@ export function parseBibTeX(bibtexContent: string): Publication[] {
       keywords,
       researchArea: detectResearchArea(tags.title, keywords),
 
+
       // Optional fields
-      journal: cleanBibTeXString(tags.journal),
+      ccf : ccf,
+
+      journal: cleanBibTeXString(tags.journaltitle),
       conference: cleanBibTeXString(tags.booktitle),
       volume: tags.volume,
       issue: tags.number,

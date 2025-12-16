@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Publication } from '@/types/publication';
+import { cn } from '@/lib/utils';
 
 interface SelectedPublicationsProps {
     publications: Publication[];
@@ -54,6 +55,16 @@ export default function SelectedPublications({ publications, title = 'Selected P
                         </p>
                         <p className="text-sm text-neutral-600 dark:text-neutral-500 mb-2">
                             {pub.journal || pub.conference}
+                              {pub.ccf && (  
+                                <span className={cn(  
+                                "ml-2 px-2 py-0.5 text-xs font-medium rounded",  
+                                pub.ccf === 'A' ? "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400" :  
+                                pub.ccf === 'B' ? "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400" :  
+                                "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400"  
+                                )}>  
+                                CCF-{pub.ccf}  
+                                </span>  
+                            )}  
                         </p>
                         {pub.description && (
                             <p className="text-sm text-neutral-500 dark:text-neutral-500 line-clamp-2">
