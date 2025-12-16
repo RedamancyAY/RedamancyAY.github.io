@@ -151,7 +151,7 @@ def write_paper_citations_data():
     
     
     
-    with open('../paper.bib', 'r', encoding='utf-8') as f:
+    with open('../content/publications.bib', 'r', encoding='utf-8') as f:
         bib_content = f.read()
     publications = parse_bibtex_with_parser(bib_content)
     
