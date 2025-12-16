@@ -29,6 +29,6 @@ jobs:
         export remote_repo="https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git"
         git add *.json
         git commit -m "Updated Citation Data"
-        git push "${remote_repo}" HEAD:new --force
+        git push "${remote_repo}" HEAD:google_scholar_data --force
       env: 
         GOOGLE_SCHOLAR_ID: ${{ secrets.GOOGLE_SCHOLAR_ID }}
