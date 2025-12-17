@@ -351,6 +351,21 @@ export default function Profile({ author, social, features, researchInterests }:
                     </div>
                 </div>
             )}
+
+            {/* Template Credit */}
+            <div className="text-center mt-4">
+                <p className="text-xs text-neutral-400 dark:text-neutral-500">
+                    学术主页模板：
+                    <a
+                        href="https://github.com/xyjoey/PRISM"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-accent hover:underline"
+                    >
+                        xyjoey/PRISM
+                    </a>
+                </p>
+            </div>
         </motion.div>
     );
 }
