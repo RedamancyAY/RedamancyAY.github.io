@@ -270,6 +270,11 @@ export default function PublicationsList({ config, publications, embedded = fals
                                     </p>
                                     <p className="text-sm font-medium text-neutral-800 dark:text-neutral-600 mb-3">
                                         {pub.journal || pub.conference} {pub.year}
+                                        {pub.citation_number !== undefined && pub.citation_number > 0 && (
+                                            <span className="ml-2 px-2 py-0.5 text-xs font-medium rounded bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400">
+                                                📖 {pub.citation_number} citations
+                                            </span>
+                                        )}
                                         {pub.ccf && (  
                                         <span className={cn(  
                                         "ml-2 px-2 py-0.5 text-xs font-medium rounded",  

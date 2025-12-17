@@ -1,6 +1,6 @@
 import { getConfig } from '@/lib/config';
 import { getMarkdownContent, getBibtexContent, getTomlContent, getPageConfig } from '@/lib/content';
-import { parseBibTeX } from '@/lib/bibtexParser';
+import { parseBibTeX, parseBibTeXWithCitations } from '@/lib/bibtexParser';
 import Profile from '@/components/home/Profile';
 import About from '@/components/home/About';
 import SelectedPublications from '@/components/home/SelectedPublications';
@@ -31,7 +31,7 @@ type PageData =
   | { type: 'text', id: string, config: TextPageConfig, content: string }
   | { type: 'card', id: string, config: CardPageConfig };
 
-export default function Home() {
+export default async function Home() {
   const config = getConfig();
   const enableOnePageMode = config.features.enable_one_page_mode;
 
@@ -39,9 +39,9 @@ export default function Home() {
   const aboutConfig = getPageConfig('about');
   const researchInterests = (aboutConfig as { profile?: { research_interests?: string[] } })?.profile?.research_interests;
 
-  // Helper function to process sections (for about page)
-  const processSections = (sections: SectionConfig[]) => {
-    return sections.map((section: SectionConfig) => {
+  // Helper function to process sections (for about page) - now async
+  const processSections = async (sections: SectionConfig[]) => {
+    const processedSections = await Promise.all(sections.map(async (section: SectionConfig) => {
       switch (section.type) {
         case 'markdown':
           return {
@@ -50,7 +50,8 @@ export default function Home() {
           };
         case 'publications': {
           const bibtex = getBibtexContent('publications.bib');
-          const allPubs = parseBibTeX(bibtex);
+          // Use async version to fetch citations from GitHub
+          const allPubs = await parseBibTeXWithCitations(bibtex);
           const filteredPubs = section.filter === 'selected'
             ? allPubs.filter(p => p.selected)
             : allPubs;
@@ -69,16 +70,17 @@ export default function Home() {
         default:
           return section;
       }
-    });
+    }));
+    return processedSections;
   };
 
   // Determine which pages to show
   let pagesToShow: PageData[] = [];
 
   if (enableOnePageMode) {
-    pagesToShow = config.navigation
+    const processedPages = await Promise.all(config.navigation
       .filter(item => item.type === 'page')
-      .map(item => {
+      .map(async item => {
         const rawConfig = getPageConfig(item.target);
         if (!rawConfig) return null;
 
@@ -88,7 +90,7 @@ export default function Home() {
           return {
             type: 'about',
             id: item.target,
-            sections: processSections((rawConfig as { sections: SectionConfig[] }).sections || [])
+            sections: await processSections((rawConfig as { sections: SectionConfig[] }).sections || [])
           } as PageData;
         } else if (pageConfig.type === 'publication') {
           const pubConfig = pageConfig as PublicationPageConfig;
@@ -97,7 +99,7 @@ export default function Home() {
             type: 'publication',
             id: item.target,
             config: pubConfig,
-            publications: parseBibTeX(bibtex)
+            publications: await parseBibTeXWithCitations(bibtex)
           } as PageData;
         } else if (pageConfig.type === 'text') {
           const textConfig = pageConfig as TextPageConfig;
@@ -115,14 +117,14 @@ export default function Home() {
           } as PageData;
         }
         return null;
-      })
-      .filter((item): item is PageData => item !== null);
+      }));
+    pagesToShow = processedPages.filter((item): item is PageData => item !== null);
   } else {
     if (aboutConfig) {
       pagesToShow = [{
         type: 'about',
         id: 'about',
-        sections: processSections((aboutConfig as { sections: SectionConfig[] }).sections || [])
+        sections: await processSections((aboutConfig as { sections: SectionConfig[] }).sections || [])
       }];
     }
   }

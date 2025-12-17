@@ -1,5 +1,6 @@
 import { Publication, PublicationType, ResearchArea } from '@/types/publication';
 import { getConfig } from './config';
+import { fetchCitationsFromGitHub, getCitationCount } from './citationsFetcher';
 
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const bibtexParse = require('bibtex-parse-js');
@@ -132,6 +133,37 @@ export function parseBibTeX(bibtexContent: string): Publication[] {
     // Sort by month descending (December to January)
     return monthB - monthA;
   });
+}
+
+/**
+ * Parse BibTeX content and fetch citation data from GitHub asynchronously
+ * This version will include citation counts from the configured GitHub repository
+ */
+export async function parseBibTeXWithCitations(bibtexContent: string): Promise<Publication[]> {
+  // First, parse the BibTeX normally
+  const publications = parseBibTeX(bibtexContent);
+  
+  // Then fetch citations from GitHub
+  try {
+    const citationMap = await fetchCitationsFromGitHub();
+    
+    if (citationMap.size > 0) {
+      // Add citation counts to publications
+      for (const pub of publications) {
+        const citations = getCitationCount(citationMap, pub.title);
+        if (citations > 0) {
+          pub.citation_number = citations;
+          pub.citations = citations;
+        }
+      }
+      console.log(`Added citations to ${publications.filter(p => p.citations).length} publications`);
+    }
+  } catch (error) {
+    console.error('Error fetching citations from GitHub:', error);
+    // Continue without citations on error
+  }
+  
+  return publications;
 }
 
 function parseAuthors(authorsStr: string, highlightName?: string): Array<{ name: string; isHighlighted?: boolean; isCorresponding?: boolean; isCoAuthor?: boolean }> {

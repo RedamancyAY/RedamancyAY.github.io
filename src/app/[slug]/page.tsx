@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import { getPageConfig, getMarkdownContent, getBibtexContent } from '@/lib/content';
 import { getConfig } from '@/lib/config';
-import { parseBibTeX } from '@/lib/bibtexParser';
+import { parseBibTeXWithCitations } from '@/lib/bibtexParser';
 import PublicationsList from '@/components/publications/PublicationsList';
 import TextPage from '@/components/pages/TextPage';
 import CardPage from '@/components/pages/CardPage';
@@ -60,9 +60,9 @@ export default async function DynamicPage({ params }: { params: Promise<{ slug: 
     );
 }
 
-function PublicationPage({ config }: { config: PublicationPageConfig }) {
+async function PublicationPage({ config }: { config: PublicationPageConfig }) {
     const bibtex = getBibtexContent(config.source);
-    const publications = parseBibTeX(bibtex);
+    const publications = await parseBibTeXWithCitations(bibtex);
     return <PublicationsList config={config} publications={publications} />;
 }
 

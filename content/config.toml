@@ -32,6 +32,14 @@ enable_likes = true
 # Display all subpages on a single page
 enable_one_page_mode = false
 
+[citations]
+# GitHub repository for citation data (format: "owner/repo")
+github_repo = "RedamancyAY/RedamancyAY.github.io"
+# Branch name where citation data is stored
+github_branch = "google_scholar_data"
+# Path to the gs_data.json file in the repository (can be empty if at root)
+data_path = ""
+
 [[navigation]]
 title = "About"
 type = "page"

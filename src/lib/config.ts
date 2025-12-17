@@ -30,6 +30,11 @@ export interface SiteConfig {
         enable_likes: boolean;
         enable_one_page_mode?: boolean;
     };
+    citations?: {
+        github_repo?: string;
+        github_branch?: string;
+        data_path?: string;
+    };
     navigation: Array<{
         title: string;
         type: 'section' | 'page' | 'link';
