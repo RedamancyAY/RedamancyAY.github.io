@@ -9,7 +9,10 @@ import {
     CalendarIcon,
     BookOpenIcon,
     ClipboardDocumentIcon,
-    DocumentTextIcon
+    DocumentTextIcon,
+    ArrowsUpDownIcon,
+    ChevronUpIcon,
+    ChevronDownIcon
 } from '@heroicons/react/24/outline';
 import { Publication } from '@/types/publication';
 import { PublicationPageConfig } from '@/types/page';
@@ -29,6 +32,8 @@ export default function PublicationsList({ config, publications, embedded = fals
     const [showFilters, setShowFilters] = useState(false);
     const [expandedBibtexId, setExpandedBibtexId] = useState<string | null>(null);
     const [expandedAbstractId, setExpandedAbstractId] = useState<string | null>(null);
+    const [sortBy, setSortBy] = useState<'year' | 'citations'>('year');
+    const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
 
     // Extract unique years and types for filters
     const years = useMemo(() => {
@@ -47,9 +52,9 @@ export default function PublicationsList({ config, publications, embedded = fals
     }, [publications]);
 
 
-    // Filter publications
+    // Filter and sort publications
     const filteredPublications = useMemo(() => {
-        return publications.filter(pub => {
+        const filtered = publications.filter(pub => {
             const matchesSearch =
                 pub.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
                 pub.authors.some(author => author.name.toLowerCase().includes(searchQuery.toLowerCase())) ||
@@ -62,7 +67,30 @@ export default function PublicationsList({ config, publications, embedded = fals
   
             return matchesSearch && matchesYear && matchesType && matchesCCF;
         });
-    }, [publications, searchQuery, selectedYear, selectedType, selectedCCF]);
+
+        // Sort publications
+        return filtered.sort((a, b) => {
+            let comparison = 0;
+            if (sortBy === 'year') {
+                comparison = a.year - b.year;
+            } else if (sortBy === 'citations') {
+                const citationsA = a.citation_number || 0;
+                const citationsB = b.citation_number || 0;
+                comparison = citationsA - citationsB;
+            }
+            return sortOrder === 'desc' ? -comparison : comparison;
+        });
+    }, [publications, searchQuery, selectedYear, selectedType, selectedCCF, sortBy, sortOrder]);
+
+    // Toggle sort order or change sort field
+    const handleSort = (field: 'year' | 'citations') => {
+        if (sortBy === field) {
+            setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
+        } else {
+            setSortBy(field);
+            setSortOrder('desc');
+        }
+    };
 
     return (
         <motion.div
@@ -104,6 +132,46 @@ export default function PublicationsList({ config, publications, embedded = fals
                     >
                         <FunnelIcon className="h-5 w-5 mr-2" />
                         Filters
+                    </button>
+                </div>
+
+                {/* Sort Controls */}
+                <div className="flex items-center gap-2">
+                    <span className="text-sm text-neutral-500 dark:text-neutral-400 flex items-center">
+                        <ArrowsUpDownIcon className="h-4 w-4 mr-1" />
+                        Sort by:
+                    </span>
+                    <button
+                        onClick={() => handleSort('year')}
+                        className={cn(
+                            "flex items-center px-3 py-1.5 text-sm rounded-lg border transition-all duration-200",
+                            sortBy === 'year'
+                                ? "bg-accent text-white border-accent"
+                                : "bg-white dark:bg-neutral-900 border-neutral-200 dark:border-neutral-800 text-neutral-600 hover:border-accent hover:text-accent"
+                        )}
+                    >
+                        Year
+                        {sortBy === 'year' && (
+                            sortOrder === 'desc' 
+                                ? <ChevronDownIcon className="h-4 w-4 ml-1" />
+                                : <ChevronUpIcon className="h-4 w-4 ml-1" />
+                        )}
+                    </button>
+                    <button
+                        onClick={() => handleSort('citations')}
+                        className={cn(
+                            "flex items-center px-3 py-1.5 text-sm rounded-lg border transition-all duration-200",
+                            sortBy === 'citations'
+                                ? "bg-accent text-white border-accent"
+                                : "bg-white dark:bg-neutral-900 border-neutral-200 dark:border-neutral-800 text-neutral-600 hover:border-accent hover:text-accent"
+                        )}
+                    >
+                        Citations
+                        {sortBy === 'citations' && (
+                            sortOrder === 'desc' 
+                                ? <ChevronDownIcon className="h-4 w-4 ml-1" />
+                                : <ChevronUpIcon className="h-4 w-4 ml-1" />
+                        )}
                     </button>
                 </div>
 
