@@ -13,7 +13,9 @@ research_interests = [
 id = "about"
 type = "markdown"
 source = "bio.md"
+source_en = "bio.en.md"
 title = "About"
+
 
 [[sections]]
 id = "featured_publications"

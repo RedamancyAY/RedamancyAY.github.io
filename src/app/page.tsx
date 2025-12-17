@@ -43,11 +43,21 @@ export default async function Home() {
   const processSections = async (sections: SectionConfig[]) => {
     const processedSections = await Promise.all(sections.map(async (section: SectionConfig) => {
       switch (section.type) {
-        case 'markdown':
+        case 'markdown': {
+          let content = section.source ? getMarkdownContent(section.source) : '';
+          let contentEn = '';
+          // 支持英文内容
+          // @ts-ignore
+          if (section.source_en) {
+            // @ts-ignore
+            contentEn = getMarkdownContent(section.source_en);
+          }
           return {
             ...section,
-            content: section.source ? getMarkdownContent(section.source) : ''
+            content,
+            contentEn,
           };
+        }
         case 'publications': {
           const bibtex = getBibtexContent('publications.bib');
           // Use async version to fetch citations from GitHub
@@ -155,6 +165,7 @@ export default async function Home() {
                       <About
                         key={section.id}
                         content={section.content || ''}
+                        contentEn={section.contentEn}
                         title={section.title}
                       />
                     );

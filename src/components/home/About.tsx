@@ -3,20 +3,44 @@
 import { motion } from 'framer-motion';
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
+import { useState } from 'react';
+
 
 interface AboutProps {
     content: string;
     title?: string;
+    contentEn?: string;
 }
 
-export default function About({ content, title = 'About' }: AboutProps) {
+
+export default function About({ content, title = 'About', contentEn }: AboutProps) {
+    const [lang, setLang] = useState<'zh' | 'en'>('zh');
+
     return (
         <motion.section
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
         >
-            <h2 className="text-2xl font-serif font-bold text-primary mb-4">{title}</h2>
+            <div className="flex items-center mb-4">
+                <h2 className="text-2xl font-serif font-bold text-primary mr-4">{title}</h2>
+                {contentEn && (
+                    <div className="flex space-x-2">
+                        <button
+                            className={`px-2 py-1 rounded text-sm font-medium border ${lang === 'zh' ? 'bg-accent text-white' : 'bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300'}`}
+                            onClick={() => setLang('zh')}
+                        >
+                            中文
+                        </button>
+                        <button
+                            className={`px-2 py-1 rounded text-sm font-medium border ${lang === 'en' ? 'bg-accent text-white' : 'bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300'}`}
+                            onClick={() => setLang('en')}
+                        >
+                            English
+                        </button>
+                    </div>
+                )}
+            </div>
             <div className="text-neutral-700 dark:text-neutral-600 leading-relaxed [&_a]:inline [&_img]:inline [&_img]:align-middle">
                 <ReactMarkdown
                     rehypePlugins={[rehypeRaw]}
@@ -45,7 +69,7 @@ export default function About({ content, title = 'About' }: AboutProps) {
                         em: ({ children }) => <em className="italic text-neutral-600 dark:text-neutral-500">{children}</em>,
                     }}
                 >
-                    {content}
+                    {lang === 'en' && contentEn ? contentEn : content}
                 </ReactMarkdown>
             </div>
         </motion.section>
