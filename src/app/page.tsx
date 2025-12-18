@@ -1,6 +1,6 @@
 import { getConfig } from '@/lib/config';
 import { getMarkdownContent, getBibtexContent, getTomlContent, getPageConfig } from '@/lib/content';
-import { parseBibTeX, parseBibTeXWithCitations } from '@/lib/bibtexParser';
+import { parseBibTeXWithCitations } from '@/lib/bibtexParser';
 import Profile from '@/components/home/Profile';
 import About from '@/components/home/About';
 import SelectedPublications from '@/components/home/SelectedPublications';
@@ -21,6 +21,7 @@ interface SectionConfig {
   filter?: string;
   limit?: number;
   content?: string;
+  contentEn?: string;
   publications?: Publication[];
   items?: NewsItem[];
 }
@@ -44,12 +45,12 @@ export default async function Home() {
     const processedSections = await Promise.all(sections.map(async (section: SectionConfig) => {
       switch (section.type) {
         case 'markdown': {
-          let content = section.source ? getMarkdownContent(section.source) : '';
+          const content = section.source ? getMarkdownContent(section.source) : '';
           let contentEn = '';
           // 支持英文内容
-          // @ts-ignore
+          // @ts-expect-error: section.source_en 可能存在于 about.toml，但类型未声明
           if (section.source_en) {
-            // @ts-ignore
+            // @ts-expect-error: section.source_en 可能存在于 about.toml，但类型未声明
             contentEn = getMarkdownContent(section.source_en);
           }
           return {

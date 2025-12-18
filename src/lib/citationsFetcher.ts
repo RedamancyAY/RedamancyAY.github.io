@@ -220,7 +220,7 @@ export async function fetchCitationsFromGitHub(): Promise<Map<string, number>> {
   
   const repo = citationsConfig.github_repo;
   const branch = citationsConfig.github_branch || 'main';
-  const dataPath = citationsConfig.data_path;
+  const dataPath = citationsConfig.data_path || '';
   
   // Check cache
   const now = Date.now();

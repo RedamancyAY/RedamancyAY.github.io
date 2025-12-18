@@ -271,7 +271,7 @@ export default function PublicationsList({ config, publications, embedded = fals
                                         {ccfRatings.map(ccf => (  
                                             <button  
                                                 key={ccf}  
-                                                onClick={() => setSelectedCCF(ccf)}  
+                                                onClick={() => setSelectedCCF(ccf || '')}  
                                                 className={cn(  
                                                     "px-3 py-1 text-xs rounded-full transition-colors",  
                                                     selectedCCF === ccf  

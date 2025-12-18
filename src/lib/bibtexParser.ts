@@ -62,7 +62,10 @@ export function parseBibTeX(bibtexContent: string): Publication[] {
 
 
     // CCF, JCR
-    const ccf = tags.ccf || undefined;  // 添加这行  
+    let ccf: 'A' | 'B' | 'C' | undefined = undefined;
+    if (tags.ccf === 'A' || tags.ccf === 'B' || tags.ccf === 'C') {
+      ccf = tags.ccf;
+    }
 
     // Determine type
     const type = typeMapping[entry.entryType.toLowerCase()] || 'journal';
