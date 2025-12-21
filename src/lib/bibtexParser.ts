@@ -76,6 +76,9 @@ export function parseBibTeX(bibtexContent: string): Publication[] {
     // Parse selected field (convert string to boolean)
     const selected = tags.selected === 'true' || tags.selected === 'yes';
 
+    // Parse esiHighlyCited field (convert string to boolean)
+    const esiHighlyCited = tags.esiHighlyCited === 'true' || tags.esihighlycited === 'true' || tags.esiHighlyCited === 'yes' || tags.esihighlycited === 'yes';
+
     // Parse preview field (remove braces if present)
     const preview = tags.preview?.replace(/[{}]/g, '');
 
@@ -107,10 +110,11 @@ export function parseBibTeX(bibtexContent: string): Publication[] {
       abstract: cleanBibTeXString(tags.abstract),
       description: cleanBibTeXString(tags.description || tags.note),
       selected,
+      esiHighlyCited: esiHighlyCited || undefined,
       preview,
 
       // Store original BibTeX (excluding custom fields)
-      bibtex: reconstructBibTeX(entry, ['selected', 'preview', 'description', 'keywords', 'code']),
+      bibtex: reconstructBibTeX(entry, ['selected', 'preview', 'description', 'keywords', 'code', 'esiHighlyCited']),
     };
 
     // Clean up undefined fields

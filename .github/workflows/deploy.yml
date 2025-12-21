@@ -6,6 +6,7 @@ on:
   push:
    branches: 
        - new2
+       - google_scholar_data
   workflow_dispatch:
 
 permissions:

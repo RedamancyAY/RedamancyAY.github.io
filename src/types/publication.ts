@@ -37,6 +37,7 @@ export interface Publication {
   quartile?: 'Q1' | 'Q2' | 'Q3' | 'Q4';
   ccf?: 'A' | 'B' | 'C'; 
   citation_number?: number;
+  esiHighlyCited?: boolean;
   bibtex?: string;
   venue?: string;
   location?: string;

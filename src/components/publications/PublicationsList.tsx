@@ -29,6 +29,7 @@ export default function PublicationsList({ config, publications, embedded = fals
     const [selectedYear, setSelectedYear] = useState<number | 'all'>('all');
     const [selectedType, setSelectedType] = useState<string | 'all'>('all');
     const [selectedCCF, setSelectedCCF] = useState<string | 'all'>('all');
+    const [showESIOnly, setShowESIOnly] = useState(false);
     const [showFilters, setShowFilters] = useState(false);
     const [expandedBibtexId, setExpandedBibtexId] = useState<string | null>(null);
     const [expandedAbstractId, setExpandedAbstractId] = useState<string | null>(null);
@@ -63,9 +64,10 @@ export default function PublicationsList({ config, publications, embedded = fals
 
             const matchesYear = selectedYear === 'all' || pub.year === selectedYear;
             const matchesType = selectedType === 'all' || pub.type === selectedType;
-            const matchesCCF = selectedCCF === 'all' || pub.ccf === selectedCCF;  
+            const matchesCCF = selectedCCF === 'all' || pub.ccf === selectedCCF;
+            const matchesESI = !showESIOnly || pub.esiHighlyCited === true;
   
-            return matchesSearch && matchesYear && matchesType && matchesCCF;
+            return matchesSearch && matchesYear && matchesType && matchesCCF && matchesESI;
         });
 
         // Sort publications
@@ -80,7 +82,7 @@ export default function PublicationsList({ config, publications, embedded = fals
             }
             return sortOrder === 'desc' ? -comparison : comparison;
         });
-    }, [publications, searchQuery, selectedYear, selectedType, selectedCCF, sortBy, sortOrder]);
+    }, [publications, searchQuery, selectedYear, selectedType, selectedCCF, showESIOnly, sortBy, sortOrder]);
 
     // Toggle sort order or change sort field
     const handleSort = (field: 'year' | 'citations') => {
@@ -284,6 +286,26 @@ export default function PublicationsList({ config, publications, embedded = fals
                                         ))}  
                                     </div>  
                                 </div>
+
+                                {/* ESI Highly Cited Filter */}
+                                <div className="space-y-2">
+                                    <label className="text-sm font-medium text-neutral-700 dark:text-neutral-300 flex items-center">
+                                        <BookOpenIcon className="h-4 w-4 mr-1" /> ESI Highly Cited
+                                    </label>
+                                    <div className="flex flex-wrap gap-2">
+                                        <button
+                                            onClick={() => setShowESIOnly(!showESIOnly)}
+                                            className={cn(
+                                                "px-3 py-1 text-xs rounded-full transition-colors",
+                                                showESIOnly
+                                                    ? "bg-orange-500 text-white"
+                                                    : "bg-white dark:bg-neutral-800 text-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-700"
+                                            )}
+                                        >
+                                            🔥 ESI High Cited Only
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </motion.div>
                     )}
@@ -353,6 +375,11 @@ export default function PublicationsList({ config, publications, embedded = fals
                                         CCF-{pub.ccf}  
                                         </span>  
                                     )}
+                                        {pub.esiHighlyCited && (
+                                            <span className="ml-2 px-2 py-0.5 text-xs font-medium rounded bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-400">
+                                                🔥 ESI Highly Cited
+                                            </span>
+                                        )}
                                     </p>
                                     {pub.description && (
                                         <p className="text-sm text-neutral-600 dark:text-neutral-500 mb-4 line-clamp-3">
