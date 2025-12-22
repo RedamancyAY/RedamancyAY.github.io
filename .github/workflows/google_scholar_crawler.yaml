@@ -32,3 +32,10 @@ jobs:
         git push "${remote_repo}" HEAD:google_scholar_data --force
       env: 
         GOOGLE_SCHOLAR_ID: ${{ secrets.GOOGLE_SCHOLAR_ID }}
+
+    - name: Trigger Deploy on new2 branch
+        # 只有上面的步骤全部显示“绿色对勾（Success）”，这一步才会运行
+        # 如果上面 git push 挂了，这一步会被自动 Skip（跳过）
+      run: gh workflow run deploy.yml --ref new2
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
