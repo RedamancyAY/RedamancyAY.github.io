@@ -3,7 +3,7 @@ name: Get Citation Data for New template
 on: 
  page_build: 
  schedule:
-  - cron:  '0 8 * * *'
+  - cron:  '43 9 * * *'
  workflow_dispatch:
 
 
@@ -39,3 +39,4 @@ jobs:
       run: gh workflow run deploy.yml --ref new2
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
