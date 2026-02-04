@@ -75,7 +75,7 @@ export function parseBibTeX(bibtexContent: string): Publication[] {
     let cas: '1区' | '2区' | '3区' | '4区' | undefined = undefined;
     const casTag = tags.cas?.toUpperCase(); // Normalize to uppercase just in case
     if (casTag === '1区' || casTag === '2区' || casTag === '3区' || casTag === '4区') {
-      cas = casTag as any;
+      cas = casTag as '1区' | '2区' | '3区' | '4区';
     } else if (casTag === 'Q1') {
       cas = '1区';
     } else if (casTag === 'Q2') {
