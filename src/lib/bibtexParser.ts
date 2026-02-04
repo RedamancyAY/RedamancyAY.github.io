@@ -47,14 +47,14 @@ export function parseBibTeX(bibtexContent: string): Publication[] {
     const authors = parseAuthors(tags.author || '', authorName);
 
     // Parse year and month
-    let year = parseInt(tags.year);  
-    if (!year && tags.date) {  
+    let year = parseInt(tags.year);
+    if (!year && tags.date) {
       // Extract year from date field (supports formats like "2024-03-15", "2024", etc.)  
-      const dateMatch = tags.date.match(/(\d{4})/);  
-      if (dateMatch) {  
-        year = parseInt(dateMatch[1]);  
-      }  
-    }  
+      const dateMatch = tags.date.match(/(\d{4})/);
+      if (dateMatch) {
+        year = parseInt(dateMatch[1]);
+      }
+    }
     year = year || new Date().getFullYear();
     // const year = parseInt(tags.year) || new Date().getFullYear();
     const monthStr = tags.month?.toLowerCase() || '';
@@ -97,9 +97,9 @@ export function parseBibTeX(bibtexContent: string): Publication[] {
 
 
       // Optional fields
-      ccf : ccf,
+      ccf: ccf,
 
-      journal: cleanBibTeXString(tags.journaltitle),
+      journal: cleanBibTeXString(tags.journaltitle || tags.journal),
       conference: cleanBibTeXString(tags.booktitle),
       volume: tags.volume,
       issue: tags.number,
@@ -149,11 +149,11 @@ export function parseBibTeX(bibtexContent: string): Publication[] {
 export async function parseBibTeXWithCitations(bibtexContent: string): Promise<Publication[]> {
   // First, parse the BibTeX normally
   const publications = parseBibTeX(bibtexContent);
-  
+
   // Then fetch citations from GitHub
   try {
     const citationMap = await fetchCitationsFromGitHub();
-    
+
     if (citationMap.size > 0) {
       // Add citation counts to publications
       for (const pub of publications) {
@@ -169,7 +169,7 @@ export async function parseBibTeXWithCitations(bibtexContent: string): Promise<P
     console.error('Error fetching citations from GitHub:', error);
     // Continue without citations on error
   }
-  
+
   return publications;
 }
 
