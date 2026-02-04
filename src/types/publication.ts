@@ -36,6 +36,7 @@ export interface Publication {
   impactFactor?: number;
   quartile?: 'Q1' | 'Q2' | 'Q3' | 'Q4';
   ccf?: 'A' | 'B' | 'C'; 
+  cas?: '1区' | '2区' | '3区' | '4区'; 
   citation_number?: number;
   esiHighlyCited?: boolean;
   bibtex?: string;

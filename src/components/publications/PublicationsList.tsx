@@ -29,6 +29,8 @@ export default function PublicationsList({ config, publications, embedded = fals
     const [selectedYear, setSelectedYear] = useState<number | 'all'>('all');
     const [selectedType, setSelectedType] = useState<string | 'all'>('all');
     const [selectedCCF, setSelectedCCF] = useState<string | 'all'>('all');
+    const [selectedJCR, setSelectedJCR] = useState<string | 'all'>('all');
+    const [selectedCAS, setSelectedCAS] = useState<string | 'all'>('all');
     const [showESIOnly, setShowESIOnly] = useState(false);
     const [showFilters, setShowFilters] = useState(false);
     const [expandedBibtexId, setExpandedBibtexId] = useState<string | null>(null);
@@ -47,9 +49,19 @@ export default function PublicationsList({ config, publications, embedded = fals
         return uniqueTypes.sort();
     }, [publications]);
 
-    const ccfRatings = useMemo(() => {  
-    const uniqueCCFs = Array.from(new Set(publications.map(p => p.ccf).filter(Boolean)));  
-        return uniqueCCFs.sort();  
+    const ccfRatings = useMemo(() => {
+        const uniqueCCFs = Array.from(new Set(publications.map(p => p.ccf).filter(Boolean)));
+        return uniqueCCFs.sort();
+    }, [publications]);
+
+    const jcrQuartiles = useMemo(() => {
+        const uniqueJCRs = Array.from(new Set(publications.map(p => p.quartile).filter(Boolean)));
+        return uniqueJCRs.sort();
+    }, [publications]);
+
+    const casTiers = useMemo(() => {
+        const uniqueCASs = Array.from(new Set(publications.map(p => p.cas).filter(Boolean)));
+        return uniqueCASs.sort();
     }, [publications]);
 
 
@@ -65,9 +77,11 @@ export default function PublicationsList({ config, publications, embedded = fals
             const matchesYear = selectedYear === 'all' || pub.year === selectedYear;
             const matchesType = selectedType === 'all' || pub.type === selectedType;
             const matchesCCF = selectedCCF === 'all' || pub.ccf === selectedCCF;
+            const matchesJCR = selectedJCR === 'all' || pub.quartile === selectedJCR;
+            const matchesCAS = selectedCAS === 'all' || pub.cas === selectedCAS;
             const matchesESI = !showESIOnly || pub.esiHighlyCited === true;
-  
-            return matchesSearch && matchesYear && matchesType && matchesCCF && matchesESI;
+
+            return matchesSearch && matchesYear && matchesType && matchesCCF && matchesJCR && matchesCAS && matchesESI;
         });
 
         // Sort publications
@@ -82,7 +96,7 @@ export default function PublicationsList({ config, publications, embedded = fals
             }
             return sortOrder === 'desc' ? -comparison : comparison;
         });
-    }, [publications, searchQuery, selectedYear, selectedType, selectedCCF, showESIOnly, sortBy, sortOrder]);
+    }, [publications, searchQuery, selectedYear, selectedType, selectedCCF, selectedJCR, selectedCAS, showESIOnly, sortBy, sortOrder]);
 
     // Toggle sort order or change sort field
     const handleSort = (field: 'year' | 'citations') => {
@@ -154,7 +168,7 @@ export default function PublicationsList({ config, publications, embedded = fals
                     >
                         Year
                         {sortBy === 'year' && (
-                            sortOrder === 'desc' 
+                            sortOrder === 'desc'
                                 ? <ChevronDownIcon className="h-4 w-4 ml-1" />
                                 : <ChevronUpIcon className="h-4 w-4 ml-1" />
                         )}
@@ -170,7 +184,7 @@ export default function PublicationsList({ config, publications, embedded = fals
                     >
                         Citations
                         {sortBy === 'citations' && (
-                            sortOrder === 'desc' 
+                            sortOrder === 'desc'
                                 ? <ChevronDownIcon className="h-4 w-4 ml-1" />
                                 : <ChevronUpIcon className="h-4 w-4 ml-1" />
                         )}
@@ -253,38 +267,106 @@ export default function PublicationsList({ config, publications, embedded = fals
                                         ))}
                                     </div>
                                 </div>
-                                {/* CCF Filter */}  
-                                <div className="space-y-2">  
-                                    <label className="text-sm font-medium text-neutral-700 dark:text-neutral-300 flex items-center">  
-                                        <BookOpenIcon className="h-4 w-4 mr-1" /> CCF  
-                                    </label>  
-                                    <div className="flex flex-wrap gap-2">  
-                                        <button  
-                                            onClick={() => setSelectedCCF('all')}  
-                                            className={cn(  
-                                                "px-3 py-1 text-xs rounded-full transition-colors",  
-                                                selectedCCF === 'all'  
-                                                    ? "bg-accent text-white"  
-                                                    : "bg-white dark:bg-neutral-800 text-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-700"  
-                                            )}  
-                                        >  
-                                            All  
-                                        </button>  
-                                        {ccfRatings.map(ccf => (  
-                                            <button  
-                                                key={ccf}  
-                                                onClick={() => setSelectedCCF(ccf || '')}  
-                                                className={cn(  
-                                                    "px-3 py-1 text-xs rounded-full transition-colors",  
-                                                    selectedCCF === ccf  
-                                                        ? "bg-accent text-white"  
-                                                        : "bg-white dark:bg-neutral-800 text-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-700"  
-                                                )}  
-                                            >  
-                                                CCF-{ccf}  
-                                            </button>  
-                                        ))}  
-                                    </div>  
+                                {/* CCF Filter */}
+                                <div className="space-y-2">
+                                    <label className="text-sm font-medium text-neutral-700 dark:text-neutral-300 flex items-center">
+                                        <BookOpenIcon className="h-4 w-4 mr-1" /> CCF
+                                    </label>
+                                    <div className="flex flex-wrap gap-2">
+                                        <button
+                                            onClick={() => setSelectedCCF('all')}
+                                            className={cn(
+                                                "px-3 py-1 text-xs rounded-full transition-colors",
+                                                selectedCCF === 'all'
+                                                    ? "bg-accent text-white"
+                                                    : "bg-white dark:bg-neutral-800 text-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-700"
+                                            )}
+                                        >
+                                            All
+                                        </button>
+                                        {ccfRatings.map(ccf => (
+                                            <button
+                                                key={ccf}
+                                                onClick={() => setSelectedCCF(ccf || '')}
+                                                className={cn(
+                                                    "px-3 py-1 text-xs rounded-full transition-colors",
+                                                    selectedCCF === ccf
+                                                        ? "bg-accent text-white"
+                                                        : "bg-white dark:bg-neutral-800 text-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-700"
+                                                )}
+                                            >
+                                                CCF-{ccf}
+                                            </button>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                {/* JCR Filter */}
+                                <div className="space-y-2">
+                                    <label className="text-sm font-medium text-neutral-700 dark:text-neutral-300 flex items-center">
+                                        <BookOpenIcon className="h-4 w-4 mr-1" /> JCR
+                                    </label>
+                                    <div className="flex flex-wrap gap-2">
+                                        <button
+                                            onClick={() => setSelectedJCR('all')}
+                                            className={cn(
+                                                "px-3 py-1 text-xs rounded-full transition-colors",
+                                                selectedJCR === 'all'
+                                                    ? "bg-accent text-white"
+                                                    : "bg-white dark:bg-neutral-800 text-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-700"
+                                            )}
+                                        >
+                                            All
+                                        </button>
+                                        {jcrQuartiles.map(quartile => (
+                                            <button
+                                                key={quartile}
+                                                onClick={() => setSelectedJCR(quartile || '')}
+                                                className={cn(
+                                                    "px-3 py-1 text-xs rounded-full transition-colors",
+                                                    selectedJCR === quartile
+                                                        ? "bg-accent text-white"
+                                                        : "bg-white dark:bg-neutral-800 text-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-700"
+                                                )}
+                                            >
+                                                {quartile}
+                                            </button>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                {/* CAS Filter */}
+                                <div className="space-y-2">
+                                    <label className="text-sm font-medium text-neutral-700 dark:text-neutral-300 flex items-center">
+                                        <BookOpenIcon className="h-4 w-4 mr-1" /> CAS
+                                    </label>
+                                    <div className="flex flex-wrap gap-2">
+                                        <button
+                                            onClick={() => setSelectedCAS('all')}
+                                            className={cn(
+                                                "px-3 py-1 text-xs rounded-full transition-colors",
+                                                selectedCAS === 'all'
+                                                    ? "bg-accent text-white"
+                                                    : "bg-white dark:bg-neutral-800 text-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-700"
+                                            )}
+                                        >
+                                            All
+                                        </button>
+                                        {casTiers.map(tier => (
+                                            <button
+                                                key={tier}
+                                                onClick={() => setSelectedCAS(tier || '')}
+                                                className={cn(
+                                                    "px-3 py-1 text-xs rounded-full transition-colors",
+                                                    selectedCAS === tier
+                                                        ? "bg-accent text-white"
+                                                        : "bg-white dark:bg-neutral-800 text-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-700"
+                                                )}
+                                            >
+                                                CAS-{tier}
+                                            </button>
+                                        ))}
+                                    </div>
                                 </div>
 
                                 {/* ESI Highly Cited Filter */}
@@ -325,8 +407,26 @@ export default function PublicationsList({ config, publications, embedded = fals
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.4, delay: 0.1 * index }}
-                            className="bg-white dark:bg-neutral-900 p-6 rounded-xl shadow-sm border border-neutral-200 dark:border-neutral-800 hover:shadow-md transition-all duration-200"
+                            className={cn(
+                                "p-6 rounded-xl shadow-sm border transition-all duration-200 hover:shadow-md",
+                                pub.ccf === 'A' ? "bg-red-50/50 dark:bg-red-900/10 border-red-100 dark:border-red-900/20" :
+                                    pub.ccf === 'B' ? "bg-yellow-50/50 dark:bg-yellow-900/10 border-yellow-100 dark:border-yellow-900/20" :
+                                        pub.ccf === 'C' ? "bg-green-50/50 dark:bg-green-900/10 border-green-100 dark:border-green-900/20" :
+                                            "bg-white dark:bg-neutral-900 border-neutral-200 dark:border-neutral-800",
+                                "relative" // Add relative positioning
+                            )}
                         >
+                            {/* Type Badge */}
+                            <div className={cn(
+                                "absolute top-0 right-0 px-3 py-1 text-xs font-semibold rounded-bl-xl rounded-tr-xl",
+                                pub.type === 'journal' ? "bg-purple-100 text-purple-700 dark:bg-purple-900/40 dark:text-purple-300" :
+                                    pub.type === 'conference' ? "bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300" :
+                                        "bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300"
+                            )}>
+                                {pub.type === 'journal' ? 'Journal' :
+                                    pub.type === 'conference' ? 'Conference' :
+                                        pub.type.replace('-', ' ')}
+                            </div>
                             <div className="flex flex-col md:flex-row gap-6">
                                 {pub.preview && (
                                     <div className="w-full md:w-48 flex-shrink-0">
@@ -365,16 +465,41 @@ export default function PublicationsList({ config, publications, embedded = fals
                                                 📖 {pub.citation_number} citations
                                             </span>
                                         )}
-                                        {pub.ccf && (  
-                                        <span className={cn(  
-                                        "ml-2 px-2 py-0.5 text-xs font-medium rounded",  
-                                        pub.ccf === 'A' ? "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400" :  
-                                        pub.ccf === 'B' ? "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400" :  
-                                        "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400"  
-                                        )}>  
-                                        CCF-{pub.ccf}  
-                                        </span>  
-                                    )}
+                                        {pub.ccf && (
+                                            <span className={cn(
+                                                "ml-2 px-2 py-0.5 text-xs font-medium rounded",
+                                                pub.ccf === 'A' ? "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400" :
+                                                    pub.ccf === 'B' ? "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400" :
+                                                        "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400"
+                                            )}>
+                                                CCF-{pub.ccf}
+                                            </span>
+                                        )}
+                                        {pub.quartile && (
+                                            <span className={cn(
+                                                "ml-2 px-2 py-0.5 text-xs font-medium rounded",
+                                                pub.quartile === 'Q1' ? "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400" :
+                                                    pub.quartile === 'Q2' ? "bg-pink-100 text-pink-700 dark:bg-pink-900/30 dark:text-pink-400" :
+                                                        "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400"
+                                            )}>
+                                                JCR-{pub.quartile}
+                                            </span>
+                                        )}
+                                        {pub.cas && (
+                                            <span className={cn(
+                                                "ml-2 px-2 py-0.5 text-xs font-medium rounded",
+                                                pub.cas === '1区' ? "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400" :
+                                                    pub.cas === '2区' ? "bg-pink-100 text-pink-700 dark:bg-pink-900/30 dark:text-pink-400" :
+                                                        "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400"
+                                            )}>
+                                                CAS-{pub.cas}
+                                            </span>
+                                        )}
+                                        {pub.impactFactor && (
+                                            <span className="ml-2 px-2 py-0.5 text-xs font-medium rounded bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400">
+                                                IF: {pub.impactFactor}
+                                            </span>
+                                        )}
                                         {pub.esiHighlyCited && (
                                             <span className="ml-2 px-2 py-0.5 text-xs font-medium rounded bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-400">
                                                 🔥 ESI Highly Cited

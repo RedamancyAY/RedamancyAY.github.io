@@ -61,10 +61,37 @@ export function parseBibTeX(bibtexContent: string): Publication[] {
     const month = monthMapping[monthStr] || (parseInt(monthStr) || undefined);
 
 
-    // CCF, JCR
+    // CCF, JCR, CAS, IF
     let ccf: 'A' | 'B' | 'C' | undefined = undefined;
     if (tags.ccf === 'A' || tags.ccf === 'B' || tags.ccf === 'C') {
       ccf = tags.ccf;
+    }
+
+    let quartile: 'Q1' | 'Q2' | 'Q3' | 'Q4' | undefined = undefined;
+    if (tags.jcr === 'Q1' || tags.jcr === 'Q2' || tags.jcr === 'Q3' || tags.jcr === 'Q4') {
+      quartile = tags.jcr;
+    }
+
+    let cas: '1区' | '2区' | '3区' | '4区' | undefined = undefined;
+    const casTag = tags.cas?.toUpperCase(); // Normalize to uppercase just in case
+    if (casTag === '1区' || casTag === '2区' || casTag === '3区' || casTag === '4区') {
+      cas = casTag as any;
+    } else if (casTag === 'Q1') {
+      cas = '1区';
+    } else if (casTag === 'Q2') {
+      cas = '2区';
+    } else if (casTag === 'Q3') {
+      cas = '3区';
+    } else if (casTag === 'Q4') {
+      cas = '4区';
+    }
+
+    let impactFactor: number | undefined = undefined;
+    if (tags.if) {
+      const parsedIF = parseFloat(tags.if);
+      if (!isNaN(parsedIF)) {
+        impactFactor = parsedIF;
+      }
     }
 
     // Determine type
@@ -97,7 +124,10 @@ export function parseBibTeX(bibtexContent: string): Publication[] {
 
 
       // Optional fields
-      ccf: ccf,
+      ccf,
+      quartile,
+      cas,
+      impactFactor,
 
       journal: cleanBibTeXString(tags.journaltitle || tags.journal),
       conference: cleanBibTeXString(tags.booktitle),

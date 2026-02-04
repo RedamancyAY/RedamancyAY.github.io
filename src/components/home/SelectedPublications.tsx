@@ -35,8 +35,26 @@ export default function SelectedPublications({ publications, title = 'Selected P
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.4, delay: 0.1 * index }}
-                        className="bg-neutral-50 dark:bg-neutral-800 p-4 rounded-lg shadow-sm border border-neutral-200 dark:border-[rgba(148,163,184,0.24)] hover:shadow-lg transition-all duration-200 hover:scale-[1.02]"
+                        className={cn(
+                            "p-4 rounded-lg shadow-sm border transition-all duration-200 hover:shadow-lg hover:scale-[1.02]",
+                            pub.ccf === 'A' ? "bg-red-50/50 dark:bg-red-900/10 border-red-100 dark:border-red-900/20" :
+                                pub.ccf === 'B' ? "bg-yellow-50/50 dark:bg-yellow-900/10 border-yellow-100 dark:border-yellow-900/20" :
+                                    pub.ccf === 'C' ? "bg-green-50/50 dark:bg-green-900/10 border-green-100 dark:border-green-900/20" :
+                                        "bg-neutral-50 dark:bg-neutral-800 border-neutral-200 dark:border-[rgba(148,163,184,0.24)]",
+                            "relative" // Add relative positioning
+                        )}
                     >
+                        {/* Type Badge */}
+                        <div className={cn(
+                            "absolute top-0 right-0 px-3 py-1 text-xs font-semibold rounded-bl-lg rounded-tr-lg",
+                            pub.type === 'journal' ? "bg-purple-100 text-purple-700 dark:bg-purple-900/40 dark:text-purple-300" :
+                                pub.type === 'conference' ? "bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300" :
+                                    "bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300"
+                        )}>
+                            {pub.type === 'journal' ? 'Journal' :
+                                pub.type === 'conference' ? 'Conference' :
+                                    pub.type.replace('-', ' ')}
+                        </div>
                         <h3 className="font-semibold text-primary mb-2 leading-tight">
                             {pub.title}
                         </h3>
@@ -55,16 +73,41 @@ export default function SelectedPublications({ publications, title = 'Selected P
                         </p>
                         <p className="text-sm text-neutral-600 dark:text-neutral-500 mb-2">
                             {pub.journal || pub.conference}
-                              {pub.ccf && (  
-                                <span className={cn(  
-                                "ml-2 px-2 py-0.5 text-xs font-medium rounded",  
-                                pub.ccf === 'A' ? "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400" :  
-                                pub.ccf === 'B' ? "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400" :  
-                                "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400"  
-                                )}>  
-                                CCF-{pub.ccf}  
-                                </span>  
-                            )}  
+                            {pub.ccf && (
+                                <span className={cn(
+                                    "ml-2 px-2 py-0.5 text-xs font-medium rounded",
+                                    pub.ccf === 'A' ? "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400" :
+                                        pub.ccf === 'B' ? "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400" :
+                                            "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400"
+                                )}>
+                                    CCF-{pub.ccf}
+                                </span>
+                            )}
+                            {pub.quartile && (
+                                <span className={cn(
+                                    "ml-2 px-2 py-0.5 text-xs font-medium rounded",
+                                    pub.quartile === 'Q1' ? "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400" :
+                                        pub.quartile === 'Q2' ? "bg-pink-100 text-pink-700 dark:bg-pink-900/30 dark:text-pink-400" :
+                                            "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400"
+                                )}>
+                                    JCR-{pub.quartile}
+                                </span>
+                            )}
+                            {pub.cas && (
+                                <span className={cn(
+                                    "ml-2 px-2 py-0.5 text-xs font-medium rounded",
+                                    pub.cas === '1区' ? "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400" :
+                                        pub.cas === '2区' ? "bg-pink-100 text-pink-700 dark:bg-pink-900/30 dark:text-pink-400" :
+                                            "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400"
+                                )}>
+                                    CAS-{pub.cas}
+                                </span>
+                            )}
+                            {pub.impactFactor && (
+                                <span className="ml-2 px-2 py-0.5 text-xs font-medium rounded bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400">
+                                    IF: {pub.impactFactor}
+                                </span>
+                            )}
                         </p>
                         {pub.description && (
                             <p className="text-sm text-neutral-500 dark:text-neutral-500 line-clamp-2">
