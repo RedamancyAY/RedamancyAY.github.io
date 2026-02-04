@@ -37,9 +37,9 @@ export default function SelectedPublications({ publications, title = 'Selected P
                         transition={{ duration: 0.4, delay: 0.1 * index }}
                         className={cn(
                             "p-4 rounded-lg shadow-sm border transition-all duration-200 hover:shadow-lg hover:scale-[1.02]",
-                            pub.ccf === 'A' ? "bg-red-50/50 dark:bg-red-900/10 border-red-100 dark:border-red-900/20" :
-                                pub.ccf === 'B' ? "bg-yellow-50/50 dark:bg-yellow-900/10 border-yellow-100 dark:border-yellow-900/20" :
-                                    pub.ccf === 'C' ? "bg-green-50/50 dark:bg-green-900/10 border-green-100 dark:border-green-900/20" :
+                            pub.ccf === 'A' ? "bg-red-50/50 dark:bg-red-900/30 border-red-100 dark:border-red-800/50" :
+                                pub.ccf === 'B' ? "bg-yellow-50/50 dark:bg-yellow-900/30 border-yellow-100 dark:border-yellow-800/50" :
+                                    pub.ccf === 'C' ? "bg-green-50/50 dark:bg-green-900/30 border-green-100 dark:border-green-800/50" :
                                         "bg-neutral-50 dark:bg-neutral-800 border-neutral-200 dark:border-[rgba(148,163,184,0.24)]",
                             "relative" // Add relative positioning
                         )}
@@ -100,7 +100,7 @@ export default function SelectedPublications({ publications, title = 'Selected P
                                         pub.cas === '2区' ? "bg-pink-100 text-pink-700 dark:bg-pink-900/30 dark:text-pink-400" :
                                             "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400"
                                 )}>
-                                    CAS-{pub.cas}
+                                    中科院-{pub.cas}
                                 </span>
                             )}
                             {pub.impactFactor && (
@@ -117,6 +117,6 @@ export default function SelectedPublications({ publications, title = 'Selected P
                     </motion.div>
                 ))}
             </div>
-        </motion.section>
+        </motion.section >
     );
 }
