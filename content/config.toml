@@ -1,13 +1,13 @@
 [site]
 title = "Academic Homepage"
-description = "PhD student at Harbin Institute of Technology (Shenzhen)."
+description = "Associate Researcher at Harbin Institute of Technology."
 favicon = "/favicon.svg"
-last_updated = "December 12, 2025"
+last_updated = "May 9, 2025"
 
 [author]
 name = "Kuiyuan Zhang"
-title = "PhD Student"
-institution = "Harbin Institute of Technology (Shenzhen)"
+title = "Associate Researcher"
+institution = "Harbin Institute of Technology"
 avatar = "/bio.jpg"
 
 [social]
@@ -17,8 +17,8 @@ email = "zkyhitsz@gmail.com"
 location = "Shenzhen, China"
 location_url = "https://www.google.com/maps/place/%E6%B7%B1%E5%9C%B3%E5%A4%A7%E5%AD%A6%E5%9F%8E/@22.5901572,113.9719612,17.7z/data=!4m14!1m7!3m6!1s0x3403f28c1e39c995:0x4e40ceb6480e6696!2z5rex5Zyz5aSn5a2m5Z-O!8m2!3d22.59264!4d113.971569!16s%2Fm%2F0dgs81d!3m5!1s0x3403f28c1e39c995:0x4e40ceb6480e6696!8m2!3d22.59264!4d113.971569!16s%2Fm%2F0dgs81d?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D"
 location_details = [
-  "Harbin Institute of Technology (Shenzhen),",
-  "NanShan, Shenzhen, China"
+  "Harbin Institute of Technology,",
+  "Harbin, China"
 ]
 google_scholar = "https://scholar.google.com/citations?user=Cn-lWgIAAAAJ"
 orcid = "https://orcid.org"
